@@ -67,7 +67,7 @@
         </div>
     </div>
     <!-- end header -->
-    
+
     <!-- start landing -->
     <div class="landing">
         <div class="container">
@@ -136,8 +136,10 @@
                     <img src="./imgs/features-01.jpg">
                 </div>
                 <h2>Quality</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit, dignissimos unde
-                    Cupiditate!</p>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit, dignissimos unde
+                    Cupiditate!
+                </p>
                 <a href="#">More</a>
             </div>
             <div class="box time">
