@@ -363,14 +363,14 @@
         <!-- How  Apply Process End-->
 
         <!-- Support Company Start-->
-        <div class="support-company-area support-padding fix">
+        <div class="support-company-area support-padding fix" id="post-job">
             <div class="support-padding">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6">
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
-                                <span>What we are doing</span>
+                                <span>recruit employees to your company</span>
                                 <h2>24k Talented people are getting Jobs</h2>
                             </div>
                             <div class="support-caption">
