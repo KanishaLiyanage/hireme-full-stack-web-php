@@ -6932,6 +6932,10 @@ form.search-box .search-form a {
     outline: 0
 }
 
+.bottom-text{
+    text-align: center;
+}
+
 .footer-area .footer-social2 a:hover {
     background: #fb246a;
     color: #7f7f7f;
