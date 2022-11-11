@@ -6396,6 +6396,41 @@ form.search-box .search-form a {
     background-repeat: no-repeat
 }
 
+.support-padding {
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .support-padding {
+        padding-top: 195px;
+        padding-bottom: 130px
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .support-padding {
+        padding-top: 70px;
+        padding-bottom: 50px
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .support-padding {
+        padding-top: 70px;
+        padding-bottom: 50px
+    }
+}
+
+@media (max-width: 767px) {
+    .support-padding {
+        padding-top: 70px;
+        padding-bottom: 50px
+    }
+}
+
 .support-company-area .support-location-img {
     position: relative
 }

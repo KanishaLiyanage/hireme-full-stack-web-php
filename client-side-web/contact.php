@@ -7,7 +7,7 @@
         <title>Contact Us</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/x-icon" href="../client-side-web/assets/images/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
 
         <!-- CSS here -->
         <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
