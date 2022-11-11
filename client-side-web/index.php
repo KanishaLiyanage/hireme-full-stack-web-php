@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
 <!doctype html>
@@ -87,6 +88,7 @@
             </div>
         </div>
         <!-- slider Area End-->
+
         <!-- Our Services Start -->
         <div class="our-services section-pad-t30">
             <div class="container">
@@ -201,6 +203,7 @@
             </div>
         </div>
         <!-- Our Services End -->
+
         <!-- Online CV Area Start -->
         <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="../client-side-web/assets/images/gallery/cv_bg.jpg">
             <div class="container">
@@ -229,96 +232,60 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
+
                         <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.php"><img src="../client-side-web/assets/images/icon/job-list1.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.php">
-                                        <h4>Digital Marketer</h4>
-                                    </a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.php">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
-                        <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.php"><img src="../client-side-web/assets/images/icon/job-list2.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.php">
-                                        <h4>Digital Marketer</h4>
-                                    </a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.php">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
-                        <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.php"><img src="../client-side-web/assets/images/icon/job-list3.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.php">
-                                        <h4>Digital Marketer</h4>
-                                    </a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.php">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
-                        <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.php"><img src="../client-side-web/assets/images/icon/job-list4.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.php">
-                                        <h4>Digital Marketer</h4>
-                                    </a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.php">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
+                        <?php
+
+                        $query = "SELECT * FROM jobs";
+
+                        $result = mysqli_query($connection, $query);
+
+                        if ($result) { ?>
+
+                            <?php
+
+                            if (mysqli_num_rows($result) > 0) { ?>
+
+                                <?php while ($record = mysqli_fetch_array($result)) {
+
+                                    $_GET['j_id'] = $record['job_id'];
+
+                                ?>
+
+                                    <div class="single-job-items mb-30">
+                                        <div class="job-items">
+                                            <div class="company-img">
+                                                <a href="job_details.php?job_id=<?=$_GET['j_id']?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record['company_id'];?>"></a>
+                                            </div>
+                                            <div class="job-tittle">
+                                                <a href="job_details.php?job_id=<?=$_GET['j_id']?>">
+                                                    <h4><?php echo $record['job_role'] ?></h4>
+                                                </a>
+                                                <ul>
+                                                    <li><?php echo $record['company_id'] ?></li>
+                                                    <li><i class="fas fa-map-marker-alt"></i><?php echo $record['location'] ?></li>
+                                                    <li>$<?php echo $record['salary'] ?></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="items-link f-right">
+                                            <a href="job_details.php"><?php echo $record['job_nature'] ?></a>
+                                            <span><?php echo $record['posted_date'] ?></span>
+                                        </div>
+                                    </div>
+
+                                <?php } ?>
+
+                        <?php }
+                        } else {
+                            echo "DB failed!";
+                        }
+
+                        ?>
+
                     </div>
                 </div>
             </div>
