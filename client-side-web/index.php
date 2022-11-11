@@ -106,7 +106,7 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Design & Creative</a></h5>
+                                <h5><a href="find_jobs.php">Design & Creative</a></h5>
                                 <span>(653)</span>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                                 <span class="flaticon-cms"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Design & Development</a></h5>
+                                <h5><a href="find_jobs.php">Design & Development</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                 <span class="flaticon-report"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Sales & Marketing</a></h5>
+                                <h5><a href="find_jobs.php">Sales & Marketing</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                 <span class="flaticon-app"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Mobile Application</a></h5>
+                                <h5><a href="find_jobs.php">Mobile Application</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                                 <span class="flaticon-helmet"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Construction</a></h5>
+                                <h5><a href="find_jobs.php">Construction</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                                 <span class="flaticon-high-tech"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Information Technology</a></h5>
+                                <h5><a href="find_jobs.php">Information Technology</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                                 <span class="flaticon-real-estate"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Real Estate</a></h5>
+                                <h5><a href="find_jobs.php">Real Estate</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                                 <span class="flaticon-content"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.php">Content Writer</a></h5>
+                                <h5><a href="find_jobs.php">Content Writer</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="browse-btn2 text-center mt-50">
-                            <a href="job_listing.php" class="border-btn2">Browse All Sectors</a>
+                            <a href="find_jobs.php" class="border-btn2">Browse All Sectors</a>
                         </div>
                     </div>
                 </div>
