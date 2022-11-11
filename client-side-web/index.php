@@ -241,43 +241,58 @@
 
                         $query = "SELECT * FROM jobs";
 
-                        $result = mysqli_query($connection, $query);
+                        $result1 = mysqli_query($connection, $query);
 
-                        if ($result) { ?>
+                        if ($result1) { ?>
 
                             <?php
 
-                            if (mysqli_num_rows($result) > 0) { ?>
+                            if (mysqli_num_rows($result1) > 0) { ?>
 
-                                <?php while ($record = mysqli_fetch_array($result)) {
+                                <?php while ($record1 = mysqli_fetch_array($result1)) {
 
-                                    $_GET['j_id'] = $record['job_id'];
+                                    $_GET['j_id'] = $record1['job_id'];
+                                    $com_id = $record1['company_id'];
+
+                                    $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
+                                    $result2 = mysqli_query($connection, $query2);
+
+                                    if ($result2) {
+
+                                        while ($record2 = mysqli_fetch_array($result2)) {
 
                                 ?>
-
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <a href="job_details.php?job_id=<?=$_GET['j_id']?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record['company_id'];?>"></a>
+                                            <div class="single-job-items mb-30">
+                                                <div class="job-items">
+                                                    <div class="company-img">
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record1['company_id']; ?>"></a>
+                                                    </div>
+                                                    <div class="job-tittle">
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
+                                                            <h4><?php echo $record1['job_role'] ?></h4>
+                                                        </a>
+                                                        <ul>
+                                                            <li><?php echo $record2['company_name'] ?></li>
+                                                            <li><i class="fas fa-map-marker-alt"></i><?php echo $record1['location'] ?></li>
+                                                            <li>$<?php echo $record1['salary'] ?></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="items-link f-right">
+                                                    <a href="job_details.php"><?php echo $record1['job_nature'] ?></a>
+                                                    <span><?php echo $record1['posted_date'] ?></span>
+                                                </div>
                                             </div>
-                                            <div class="job-tittle">
-                                                <a href="job_details.php?job_id=<?=$_GET['j_id']?>">
-                                                    <h4><?php echo $record['job_role'] ?></h4>
-                                                </a>
-                                                <ul>
-                                                    <li><?php echo $record['company_id'] ?></li>
-                                                    <li><i class="fas fa-map-marker-alt"></i><?php echo $record['location'] ?></li>
-                                                    <li>$<?php echo $record['salary'] ?></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="items-link f-right">
-                                            <a href="job_details.php"><?php echo $record['job_nature'] ?></a>
-                                            <span><?php echo $record['posted_date'] ?></span>
-                                        </div>
-                                    </div>
 
-                                <?php } ?>
+                                        <?php
+                                        }
+
+                                        ?>
+
+                                <?php
+
+                                    }
+                                } ?>
 
                         <?php }
                         } else {
