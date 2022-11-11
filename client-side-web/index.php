@@ -1,10 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!doctype php>
+<php class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job board HTML-5 Template </title>
+    <title> Top Jobs </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -47,7 +47,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="index.php"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -56,18 +56,18 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Find a Jobs </a></li>
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="job_listing.php">Find a Jobs </a></li>
+                                            <li><a href="about.php">About</a></li>
                                             <li><a href="#">Page</a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="job_details.html">job Details</a></li>
+                                                    <li><a href="blog.php">Blog</a></li>
+                                                    <li><a href="single-blog.php">Blog Details</a></li>
+                                                    <li><a href="elements.php">Elements</a></li>
+                                                    <li><a href="job_details.php">job Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -152,7 +152,7 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Design & Creative</a></h5>
+                                <h5><a href="job_listing.php">Design & Creative</a></h5>
                                 <span>(653)</span>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 <span class="flaticon-cms"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Design & Development</a></h5>
+                                <h5><a href="job_listing.php">Design & Development</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                                 <span class="flaticon-report"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Sales & Marketing</a></h5>
+                                <h5><a href="job_listing.php">Sales & Marketing</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
                                 <span class="flaticon-app"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Mobile Application</a></h5>
+                                <h5><a href="job_listing.php">Mobile Application</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                                 <span class="flaticon-helmet"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Construction</a></h5>
+                                <h5><a href="job_listing.php">Construction</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                 <span class="flaticon-high-tech"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Information Technology</a></h5>
+                                <h5><a href="job_listing.php">Information Technology</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                                 <span class="flaticon-real-estate"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Real Estate</a></h5>
+                                <h5><a href="job_listing.php">Real Estate</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -229,7 +229,7 @@
                                 <span class="flaticon-content"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Content Writer</a></h5>
+                                <h5><a href="job_listing.php">Content Writer</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -240,7 +240,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="browse-btn2 text-center mt-50">
-                            <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
+                            <a href="job_listing.php" class="border-btn2">Browse All Sectors</a>
                         </div>
                     </div>
                 </div>
@@ -280,10 +280,10 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="job_details.html"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                                    <a href="job_details.php"><img src="assets/img/icon/job-list1.png" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
-                                    <a href="job_details.html">
+                                    <a href="job_details.php">
                                         <h4>Digital Marketer</h4>
                                     </a>
                                     <ul>
@@ -294,7 +294,7 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
+                                <a href="job_details.php">Full Time</a>
                                 <span>7 hours ago</span>
                             </div>
                         </div>
@@ -302,10 +302,10 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="job_details.html"><img src="assets/img/icon/job-list2.png" alt=""></a>
+                                    <a href="job_details.php"><img src="assets/img/icon/job-list2.png" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
-                                    <a href="job_details.html">
+                                    <a href="job_details.php">
                                         <h4>Digital Marketer</h4>
                                     </a>
                                     <ul>
@@ -316,7 +316,7 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
+                                <a href="job_details.php">Full Time</a>
                                 <span>7 hours ago</span>
                             </div>
                         </div>
@@ -324,10 +324,10 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="job_details.html"><img src="assets/img/icon/job-list3.png" alt=""></a>
+                                    <a href="job_details.php"><img src="assets/img/icon/job-list3.png" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
-                                    <a href="job_details.html">
+                                    <a href="job_details.php">
                                         <h4>Digital Marketer</h4>
                                     </a>
                                     <ul>
@@ -338,7 +338,7 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
+                                <a href="job_details.php">Full Time</a>
                                 <span>7 hours ago</span>
                             </div>
                         </div>
@@ -346,10 +346,10 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="job_details.html"><img src="assets/img/icon/job-list4.png" alt=""></a>
+                                    <a href="job_details.php"><img src="assets/img/icon/job-list4.png" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
-                                    <a href="job_details.html">
+                                    <a href="job_details.php">
                                         <h4>Digital Marketer</h4>
                                     </a>
                                     <ul>
@@ -360,7 +360,7 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
+                                <a href="job_details.php">Full Time</a>
                                 <span>7 hours ago</span>
                             </div>
                         </div>
@@ -511,7 +511,7 @@
                                 <p>Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlore eu
                                     quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt
                                     mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.</p>
-                                <a href="about.html" class="btn post-btn">Post a job</a>
+                                <a href="about.php" class="btn post-btn">Post a job</a>
                             </div>
                         </div>
                     </div>
@@ -554,7 +554,7 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>| Properties</p>
-                                    <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a>
+                                    <h3><a href="single-blog.php">Footprints in Time is perfect House in Kurashiki</a>
                                     </h3>
                                     <a href="#" class="more-btn">Read more »</a>
                                 </div>
@@ -574,7 +574,7 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>| Properties</p>
-                                    <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a>
+                                    <h3><a href="single-blog.php">Footprints in Time is perfect House in Kurashiki</a>
                                     </h3>
                                     <a href="#" class="more-btn">Read more »</a>
                                 </div>
@@ -671,7 +671,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <!-- logo -->
                         <div class="footer-logo mb-20">
-                            <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                            <a href="index.php"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
@@ -767,4 +767,4 @@
 
 </body>
 
-</html>
+</php>
