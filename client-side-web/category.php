@@ -1,13 +1,27 @@
 <?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
+<?php
+
+$job_category = " ";
+
+if (!isset($_GET['job_cat'])) {
+    echo "Product ID not passed!";
+    // header('Location: home.php');
+}else{
+    $job_category = $_GET['job_cat'];
+    echo  $job_category;
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Find Jobs</title>
+    <title> <?php echo  $job_category ?> </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -52,7 +66,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Get your dream job</h2>
+                                <h2><?php echo  $job_category ?></h2>
                             </div>
                         </div>
                     </div>
@@ -228,11 +242,12 @@
                             <div class="container">
                                 <!-- single-job-content -->
                                 <?php
-                                $query = "SELECT * FROM jobs";
+                                $query = "SELECT * FROM jobs
+                                          WHERE category ='{$job_category}'";
 
                                 $result1 = mysqli_query($connection, $query);
                                 ?>
-
+                                
                                 <!-- Count of Job list Start -->
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -253,7 +268,7 @@
                                     </div>
                                 </div>
                                 <!-- Count of Job list End -->
-                                <?php
+                            <?php
 
                                 if ($result1) { ?>
 
@@ -281,7 +296,7 @@
                                                             </div>
                                                             <div class="job-tittle">
                                                                 <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
-                                                                    <h4><?php echo strtoupper($record1['job_role']) ?></h4>
+                                                                    <h4><?php echo $record1['job_role'] ?></h4>
                                                                 </a>
                                                                 <ul>
                                                                     <li><?php echo $record2['company_name'] ?></li>

@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> HireMe </title>
+    <title> HireMe Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -70,10 +70,10 @@
                                     <div class="select-form">
                                         <div class="select-itms">
                                             <select name="select" id="select1">
-                                                <option value="">Location BD</option>
-                                                <option value="">Location PK</option>
-                                                <option value="">Location US</option>
-                                                <option value="">Location UK</option>
+                                                <option value="">Western Province</option>
+                                                <option value="">Central Province</option>
+                                                <option value="">Southern Province</option>
+                                                <option value="">Sabaragamuwa Province</option>
                                             </select>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>FEATURED TOURS Packages</span>
+                            <span>SEARCH BY CATEGORY</span>
                             <h2>Browse Top Categories </h2>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Banking & Insurance</a></h5>
+                                <h5><a href="category.php?job_cat=Banking and Insurance">Banking and Insurance</a></h5>
                                 <span>(653)</span>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                                 <span class="flaticon-cms"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">UI/UX Design</a></h5>
+                                <h5><a href="category.php?job_cat=UI/UX Design">UI/UX Design</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                                 <span class="flaticon-report"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Sales & Marketing</a></h5>
+                                <h5><a href="category.php?job_cat=Sales and Marketing">Sales and Marketing</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                 <span class="flaticon-app"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">IT-Telecoms</a></h5>
+                                <h5><a href="category.php?job_cat=Telecommunication">Telecommunication</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                                 <span class="flaticon-helmet"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Construction</a></h5>
+                                <h5><a href="category.php?job_cat=Construction">Construction</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 <span class="flaticon-high-tech"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Information Technology</a></h5>
+                                <h5><a href="category.php?job_cat=Information Technology">Information Technology</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                                 <span class="flaticon-real-estate"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Architecture</a></h5>
+                                <h5><a href="category.php?job_cat=Architecture">Architecture</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
                                 <span class="flaticon-content"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Accounting & Auditing</a></h5>
+                                <h5><a href="category.php?job_cat=Accounting and Auditing">Accounting and Auditing</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>Recent Job</span>
+                            <span>Recent Jobs</span>
                             <h2>Featured Jobs</h2>
                         </div>
                     </div>
@@ -239,7 +239,9 @@
                         <!-- single-job-content -->
                         <?php
 
-                        $query = "SELECT * FROM jobs";
+                        $query = "SELECT * FROM jobs
+                                  ORDER BY posted_date DESC
+                                  LIMIT 5";
 
                         $result1 = mysqli_query($connection, $query);
 
@@ -265,11 +267,11 @@
                                             <div class="single-job-items mb-30">
                                                 <div class="job-items">
                                                     <div class="company-img">
-                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record1['company_id']; ?>"></a>
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
                                                     </div>
                                                     <div class="job-tittle">
                                                         <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
-                                                            <h4><?php echo $record1['job_role'] ?></h4>
+                                                            <h4><?php echo strtoupper($record1['job_role']) ?></h4>
                                                         </a>
                                                         <ul>
                                                             <li><?php echo $record2['company_name'] ?></li>
