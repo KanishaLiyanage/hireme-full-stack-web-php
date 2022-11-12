@@ -1,6 +1,12 @@
 <?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
+<?php
+
+$job_category = " ";
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -77,150 +83,141 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Job Category Listing start -->
-                        <div class="job-category-listing mb-50">
-                            <!-- single one -->
-                            <div class="single-listing">
-                                <div class="small-section-tittle2">
-                                    <h4>Job Category</h4>
-                                </div>
-                                <!-- Select job items start -->
-                                <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">All Category</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
+                        <form action="../client-side-web/components/filter.php" method="POST">
+                            <div class="job-category-listing mb-50">
+                                <!-- single one -->
+                                <div class="single-listing">
                                     <div class="small-section-tittle2">
-                                        <h4>Job Type</h4>
+                                        <h4>Job Category</h4>
                                     </div>
-                                    <label class="container">Full Time
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Part Time
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Remote
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Freelance
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single two -->
-                            <div class="single-listing">
-                                <div class="small-section-tittle2">
-                                    <h4>Job Location</h4>
-                                </div>
-                                <!-- Select job items start -->
-                                <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">Anywhere</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Experience</h4>
+                                    <!-- Select job items start -->
+                                    <div class="select-job-items2">
+                                        <select name="job_category">
+                                            <option value="All Category">All Category</option>
+                                            <option value="Banking and Insurance">Banking and Insurance</option>
+                                            <option value="UI/UX Design">UI/UX Design</option>
+                                            <option value="Sales and Marketing">Sales and Marketing</option>
+                                            <option value="Telecommunication">Telecommunication</option>
+                                            <option value="Construction">Construction</option>
+                                            <option value="Information">Information Technology</option>
+                                            <option value="Architecture">Architecture</option>
+                                            <option value="Accounting and Auditing">Accounting and Auditing</option>
+                                        </select>
                                     </div>
-                                    <label class="container">1-2 Years
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">2-3 Years
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">3-6 Years
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">6-more..
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single three -->
-                            <div class="single-listing">
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Posted Within</h4>
-                                    </div>
-                                    <label class="container">Any
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Today
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 2 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 3 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 5 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 10 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <div class="single-listing">
-                                <!-- Range Slider Start -->
-                                <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                                    <div class="small-section-tittle2">
-                                        <h4>Filter Jobs</h4>
-                                    </div>
-                                    <div class="widgets_inner">
-                                        <div class="range_item">
-                                            <!-- <div id="slider-range"></div> -->
-                                            <input type="text" class="js-range-slider" value="" />
-                                            <div class="d-flex align-items-center">
-                                                <div class="price_text">
-                                                    <p>Price :</p>
-                                                </div>
-                                                <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="amount" readonly />
-                                                    <span>to</span>
-                                                    <input type="text" class="js-input-to" id="amount" readonly />
-                                                </div>
-                                            </div>
+                                    <!--  Select job items End-->
+                                    <!-- select-Categories start -->
+                                    <div class="select-Categories pt-80 pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Job Nature</h4>
                                         </div>
+                                        <label class="container">Full Time
+                                            <input type="radio" id="nature" name="job_nature" value="1" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Part Time
+                                            <input type="radio" id="nature" name="job_nature" value="2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Remote
+                                            <input type="radio" id="nature" name="job_nature" value="3">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Freelance
+                                            <input type="radio" id="nature" name="job_nature" value="4">
+                                            <span class="checkmark"></span>
+                                        </label>
                                     </div>
-                                </aside>
-                                <!-- Range Slider End -->
+                                    <!-- select-Categories End -->
+                                </div>
+                                <!-- single two -->
+                                <div class="single-listing">
+                                    <div class="small-section-tittle2">
+                                        <h4>Job Location</h4>
+                                    </div>
+                                    <!-- Select job items start -->
+                                    <div class="select-job-items2">
+                                        <select name="job_location">
+                                            <option value="Anywhere">Anywhere</option>
+                                            <option value="Western Province">Western Province</option>
+                                            <option value="Central Province">Central Province</option>
+                                            <option value="Southern Province">Southern Province</option>
+                                            <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+                                        </select>
+                                    </div>
+                                    <!--  Select job items End-->
+                                    <!-- select-Categories start -->
+                                    <div class="select-Categories pt-80 pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Salary Between ($)</h4>
+                                        </div>
+                                        <label class="container">Any
+                                            <input type="radio" id="sal0" name="salary" value="0" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">1-2K
+                                            <input type="radio" id="sal1" name="salary" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">2-3K
+                                            <input type="radio" id="sal2" name="salary" value="2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">3-6K
+                                            <input type="radio" id="sal3" name="salary" value="3">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">6K-more..
+                                            <input type="radio" id="sal4" name="salary" value="4">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <!-- select-Categories End -->
+                                </div>
+                                <!-- single three -->
+                                <div class="single-listing">
+                                    <!-- select-Categories start -->
+                                    <div class="select-Categories pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Posted Within</h4>
+                                        </div>
+                                        <label class="container">Any
+                                            <input type="radio" id="date" name="posted_date" value="0" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Today
+                                            <input type="radio" id="date" name="posted_date" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 2 days
+                                            <input type="radio" id="date" name="posted_date" value="2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 3 days
+                                            <input type="radio" id="date" name="posted_date" value="3">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 5 days
+                                            <input type="radio" id="date" name="posted_date" value="4">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 10 days
+                                            <input type="radio" id="date" name="posted_date" value="5">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <!-- select-Categories End -->
+                                </div>
+                                <div class="single-listing">
+
+                                </div class="button"><input type="submit" name='submit' value="Filter">
+
                             </div>
-                        </div>
-                        <!-- Job Category Listing End -->
+                            <!-- Job Category Listing End -->
                     </div>
+                    </form>
+
                     <!-- Right content -->
                     <div class="col-xl-9 col-lg-9 col-md-8">
                         <!-- Featured_job_start -->
