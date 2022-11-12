@@ -45,7 +45,6 @@
     <?php require_once('../client-side-web/components/header.php'); ?>
 
     <main>
-
         <!-- Hero Area Start-->
         <div class="slider-area ">
             <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="../client-side-web/assets/images/hero/about.jpg">
@@ -232,6 +231,29 @@
                                 $query = "SELECT * FROM jobs";
 
                                 $result1 = mysqli_query($connection, $query);
+                                ?>
+                                
+                                <!-- Count of Job list Start -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="count-job mb-35">
+                                            <span><?php echo mysqli_num_rows($result1) ?> Jobs found</span>
+                                            <!-- Select job items start -->
+                                            <div class="select-job-items">
+                                                <span>Sort by</span>
+                                                <select name="select">
+                                                    <option value="">None</option>
+                                                    <option value="">job list</option>
+                                                    <option value="">job list</option>
+                                                    <option value="">job list</option>
+                                                </select>
+                                            </div>
+                                            <!--  Select job items End-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Count of Job list End -->
+                            <?php
 
                                 if ($result1) { ?>
 
@@ -252,28 +274,6 @@
                                                 while ($record2 = mysqli_fetch_array($result2)) {
 
                                         ?>
-
-                                                    <!-- Count of Job list Start -->
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <div class="count-job mb-35">
-                                                                <span><?php echo mysqli_num_rows($result1) ?> Jobs found</span>
-                                                                <!-- Select job items start -->
-                                                                <div class="select-job-items">
-                                                                    <span>Sort by</span>
-                                                                    <select name="select">
-                                                                        <option value="">None</option>
-                                                                        <option value="">job list</option>
-                                                                        <option value="">job list</option>
-                                                                        <option value="">job list</option>
-                                                                    </select>
-                                                                </div>
-                                                                <!--  Select job items End-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Count of Job list End -->
-
                                                     <div class="single-job-items mb-30">
                                                         <div class="job-items">
                                                             <div class="company-img">

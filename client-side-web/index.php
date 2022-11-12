@@ -108,7 +108,7 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Design & Creative</a></h5>
+                                <h5><a href="find_jobs.php">Banking & Insurance</a></h5>
                                 <span>(653)</span>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                                 <span class="flaticon-cms"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Design & Development</a></h5>
+                                <h5><a href="find_jobs.php">UI/UX Design</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                 <span class="flaticon-app"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Mobile Application</a></h5>
+                                <h5><a href="find_jobs.php">IT-Telecoms</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                                 <span class="flaticon-real-estate"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Real Estate</a></h5>
+                                <h5><a href="find_jobs.php">Architecture</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
                                 <span class="flaticon-content"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="find_jobs.php">Content Writer</a></h5>
+                                <h5><a href="find_jobs.php">Accounting & Auditing</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -279,7 +279,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="items-link f-right">
-                                                    <a href="job_details.php"><?php echo $record1['job_nature'] ?></a>
+                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><?php echo $record1['job_nature'] ?></a>
                                                     <span><?php echo $record1['posted_date'] ?></span>
                                                 </div>
                                             </div>
