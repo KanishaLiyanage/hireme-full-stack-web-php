@@ -8,7 +8,7 @@ $job_category = " ";
 if (!isset($_GET['job_cat'])) {
     echo "Product ID not passed!";
     // header('Location: home.php');
-}else{
+} else {
     $job_category = $_GET['job_cat'];
     echo  $job_category;
 }
@@ -91,150 +91,79 @@ if (!isset($_GET['job_cat'])) {
                                 </div>
                             </div>
                         </div>
-                        <!-- Job Category Listing start -->
-                        <div class="job-category-listing mb-50">
-                            <!-- single one -->
-                            <div class="single-listing">
-                                <div class="small-section-tittle2">
-                                    <h4>Job Category</h4>
-                                </div>
-                                <!-- Select job items start -->
-                                <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">All Category</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
+
+                        <form action="../client-side-web/components/filter.php" method="POST">
+                            <div class="job-category-listing mb-50">
+                                <!-- single one -->
+                                <div class="single-listing">
                                     <div class="small-section-tittle2">
-                                        <h4>Job Type</h4>
+                                        <h4>Job Category</h4>
                                     </div>
-                                    <label class="container">Full Time
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Part Time
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Remote
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Freelance
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single two -->
-                            <div class="single-listing">
-                                <div class="small-section-tittle2">
-                                    <h4>Job Location</h4>
-                                </div>
-                                <!-- Select job items start -->
-                                <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">Anywhere</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Experience</h4>
+                                    <!-- Select job items start -->
+                                    <div class="select-job-items2">
+                                        <select name="job_category">
+                                            <option value="<?php echo  $job_category ?>"><?php echo  $job_category ?></option>
+                                        </select>
                                     </div>
-                                    <label class="container">1-2 Years
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">2-3 Years
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">3-6 Years
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">6-more..
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    <!--  Select job items End-->
                                 </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single three -->
-                            <div class="single-listing">
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Posted Within</h4>
-                                    </div>
-                                    <label class="container">Any
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Today
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 2 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 3 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 5 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 10 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <div class="single-listing">
-                                <!-- Range Slider Start -->
-                                <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                                    <div class="small-section-tittle2">
-                                        <h4>Filter Jobs</h4>
-                                    </div>
-                                    <div class="widgets_inner">
-                                        <div class="range_item">
-                                            <!-- <div id="slider-range"></div> -->
-                                            <input type="text" class="js-range-slider" value="" />
-                                            <div class="d-flex align-items-center">
-                                                <div class="price_text">
-                                                    <p>Price :</p>
-                                                </div>
-                                                <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="amount" readonly />
-                                                    <span>to</span>
-                                                    <input type="text" class="js-input-to" id="amount" readonly />
-                                                </div>
-                                            </div>
+                                <div class="single-listing">
+                                    <div class="select-Categories pt-80 pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Job Location</h4>
+                                        </div>
+                                        <div class="select-job-items2">
+                                            <select name="job_location">
+                                                <option value="Anywhere">Anywhere</option>
+                                                <option value="Western Province">Western Province</option>
+                                                <option value="Central Province">Central Province</option>
+                                                <option value="Southern Province">Southern Province</option>
+                                                <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+                                            </select>
                                         </div>
                                     </div>
-                                </aside>
-                                <!-- Range Slider End -->
+                                </div>
+                                <!-- single two -->
+                                <div class="single-listing">
+                                    <div class="select-Categories pt-80 pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Salary Between ($)</h4>
+                                        </div>
+                                        <label class="container">Any
+                                            <input type="radio" id="sal0" name="salary" value="Any" checked="true">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">1-2K
+                                            <input type="radio" id="sal1" name="salary" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">2-3K
+                                            <input type="radio" id="sal2" name="salary" value="2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">3-4K
+                                            <input type="radio" id="sal3" name="salary" value="3">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">4-5K
+                                            <input type="radio" id="sal3" name="salary" value="4">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">5K-more..
+                                            <input type="radio" id="sal4" name="salary" value="5">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="single-listing">
+
+                                </div class="button"><input type="submit" name='submit' value="Filter">
+
                             </div>
-                        </div>
-                        <!-- Job Category Listing End -->
+                            <!-- Job Category Listing End -->
                     </div>
+                    </form>
+
                     <!-- Right content -->
                     <div class="col-xl-9 col-lg-9 col-md-8">
                         <!-- Featured_job_start -->
@@ -247,7 +176,7 @@ if (!isset($_GET['job_cat'])) {
 
                                 $result1 = mysqli_query($connection, $query);
                                 ?>
-                                
+
                                 <!-- Count of Job list Start -->
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -268,7 +197,7 @@ if (!isset($_GET['job_cat'])) {
                                     </div>
                                 </div>
                                 <!-- Count of Job list End -->
-                            <?php
+                                <?php
 
                                 if ($result1) { ?>
 

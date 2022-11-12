@@ -8,7 +8,7 @@
                     <p class="bottom-text">
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This website is made by Group 20</a>
+                        </script> All rights reserved | This website is made for CMIS 3214 Project</a>
                     </p>
                 </div>
             </div>

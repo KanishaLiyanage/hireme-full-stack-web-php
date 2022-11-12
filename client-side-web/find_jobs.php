@@ -101,59 +101,37 @@ $job_category = " ";
                                             <option value="Sales and Marketing">Sales and Marketing</option>
                                             <option value="Telecommunication">Telecommunication</option>
                                             <option value="Construction">Construction</option>
-                                            <option value="Information">Information Technology</option>
+                                            <option value="Information Technology">Information Technology</option>
                                             <option value="Architecture">Architecture</option>
                                             <option value="Accounting and Auditing">Accounting and Auditing</option>
                                         </select>
                                     </div>
                                     <!--  Select job items End-->
-                                    <!-- select-Categories start -->
+                                </div>
+                                <div class="single-listing">
                                     <div class="select-Categories pt-80 pb-50">
                                         <div class="small-section-tittle2">
-                                            <h4>Job Nature</h4>
+                                            <h4>Job Location</h4>
                                         </div>
-                                        <label class="container">Full Time
-                                            <input type="radio" id="nature" name="job_nature" value="1" checked="checked">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Part Time
-                                            <input type="radio" id="nature" name="job_nature" value="2">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Remote
-                                            <input type="radio" id="nature" name="job_nature" value="3">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Freelance
-                                            <input type="radio" id="nature" name="job_nature" value="4">
-                                            <span class="checkmark"></span>
-                                        </label>
+                                        <div class="select-job-items2">
+                                            <select name="job_location">
+                                                <option value="Anywhere">Anywhere</option>
+                                                <option value="Western Province">Western Province</option>
+                                                <option value="Central Province">Central Province</option>
+                                                <option value="Southern Province">Southern Province</option>
+                                                <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <!-- select-Categories End -->
                                 </div>
                                 <!-- single two -->
                                 <div class="single-listing">
-                                    <div class="small-section-tittle2">
-                                        <h4>Job Location</h4>
-                                    </div>
-                                    <!-- Select job items start -->
-                                    <div class="select-job-items2">
-                                        <select name="job_location">
-                                            <option value="Anywhere">Anywhere</option>
-                                            <option value="Western Province">Western Province</option>
-                                            <option value="Central Province">Central Province</option>
-                                            <option value="Southern Province">Southern Province</option>
-                                            <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
-                                        </select>
-                                    </div>
-                                    <!--  Select job items End-->
-                                    <!-- select-Categories start -->
                                     <div class="select-Categories pt-80 pb-50">
                                         <div class="small-section-tittle2">
                                             <h4>Salary Between ($)</h4>
                                         </div>
                                         <label class="container">Any
-                                            <input type="radio" id="sal0" name="salary" value="0" checked="checked">
+                                            <input type="radio" id="sal0" name="salary" value="Any" checked="true">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="container">1-2K
@@ -164,50 +142,19 @@ $job_category = " ";
                                             <input type="radio" id="sal2" name="salary" value="2">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">3-6K
+                                        <label class="container">3-4K
                                             <input type="radio" id="sal3" name="salary" value="3">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">6K-more..
-                                            <input type="radio" id="sal4" name="salary" value="4">
+                                        <label class="container">4-5K
+                                            <input type="radio" id="sal3" name="salary" value="4">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">5K-more..
+                                            <input type="radio" id="sal4" name="salary" value="5">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
-                                    <!-- select-Categories End -->
-                                </div>
-                                <!-- single three -->
-                                <div class="single-listing">
-                                    <!-- select-Categories start -->
-                                    <div class="select-Categories pb-50">
-                                        <div class="small-section-tittle2">
-                                            <h4>Posted Within</h4>
-                                        </div>
-                                        <label class="container">Any
-                                            <input type="radio" id="date" name="posted_date" value="0" checked="checked">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Today
-                                            <input type="radio" id="date" name="posted_date" value="1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Last 2 days
-                                            <input type="radio" id="date" name="posted_date" value="2">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Last 3 days
-                                            <input type="radio" id="date" name="posted_date" value="3">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Last 5 days
-                                            <input type="radio" id="date" name="posted_date" value="4">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Last 10 days
-                                            <input type="radio" id="date" name="posted_date" value="5">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <!-- select-Categories End -->
                                 </div>
                                 <div class="single-listing">
 
@@ -274,7 +221,7 @@ $job_category = " ";
                                                     <div class="single-job-items mb-30">
                                                         <div class="job-items">
                                                             <div class="company-img">
-                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record1['company_id']; ?>"></a>
+                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
                                                             </div>
                                                             <div class="job-tittle">
                                                                 <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
