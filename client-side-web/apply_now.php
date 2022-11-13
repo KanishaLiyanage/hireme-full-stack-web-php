@@ -1,6 +1,16 @@
 <?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
+<?php
+if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
+    echo "Both IDs passed!";
+    $_GET['com_id'] = $_GET['company_id'];
+    $_GET['j_id'] = $_GET['job_id'];
+} else {
+    echo "ID pass failed!";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,6 +73,19 @@
             </div>
         </div>
         <!-- Hero Area End -->
+
+        <center>
+
+            <form action="../client-side-web/components/application.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
+
+                Upload your CV: <input type="file" name="cv">
+                <br>
+
+                <input type="submit" name="submit" value="Submit Application">
+
+            </form>
+
+        </center>
 
     </main>
 

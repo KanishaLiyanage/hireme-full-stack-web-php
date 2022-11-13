@@ -64,6 +64,62 @@
         </div>
         <!-- Hero Area End -->
 
+        <center>
+
+            <form action="../client-side-web/components/publish.php" method="POST">
+
+                <select name="job_category" >
+                    <option value="Banking and Insurance">Banking and Insurance</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Sales and Marketing">Sales and Marketing</option>
+                    <option value="Telecommunication">Telecommunication</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Accounting and Auditing">Accounting and Auditing</option>
+                </select>
+                <br>
+                Job Role: <input type="text" name="job_role" >
+                <br>
+                Salary: <input type="text" name="salary" >
+                <br>
+                <select name="salary_type" required>
+                    <option value="hourly">hourly</option>
+                    <option value="monthly">monthly</option>
+                    <option value="yearly">yearly</option>
+                </select>
+                <br>
+                <select name="job_location" >
+                    <option value="Western Province">Western Province</option>
+                    <option value="Central Province">Central Province</option>
+                    <option value="Southern Province">Southern Province</option>
+                    <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+                </select>
+                <br>
+                Description: <textarea name="description" rows="4" cols="50" ></textarea>
+                <br>
+                Vacancies: <input type="text" name="vacancies" >
+                <br>
+                <select name="job_nature" >
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Freelance">Freelance</option>
+                </select>
+                <br>
+                Require Skills: <textarea name="requirement_skills" rows="4" cols="50" ></textarea>
+                <br>
+                Education and Experience: <textarea name="education_and_experience" rows="4" cols="50" ></textarea>
+                <br>
+                Application Deadline: <input type="text" name="deadline" >
+                <br>
+
+                <input type="submit" name="submit" value="Publish">
+
+            </form>
+
+        </center>
+
     </main>
 
     <?php require_once('../client-side-web/components/footer.php'); ?>

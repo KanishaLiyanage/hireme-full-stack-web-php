@@ -225,7 +225,7 @@ if (!isset($_GET['job_cat'])) {
                                                             </div>
                                                             <div class="job-tittle">
                                                                 <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
-                                                                    <h4><?php echo $record1['job_role'] ?></h4>
+                                                                    <h4><?php echo strtoupper($record1['job_role']) ?></h4>
                                                                 </a>
                                                                 <ul>
                                                                     <li><?php echo $record2['company_name'] ?></li>
