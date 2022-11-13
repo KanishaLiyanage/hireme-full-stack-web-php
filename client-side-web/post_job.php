@@ -72,7 +72,7 @@
                     <form action="../client-side-web/components/publish.php" method="POST">
 
                         <div class="formbold-mb-5">
-                            <label for="category" class="formbold-form-label"> Category </label>
+                            <label for="category" class="formbold-form-label"> Choose Job Category </label>
                             <select name="job_category" class="form-select" required>
                                 <option value="Banking and Insurance">Banking and Insurance</option>
                                 <option value="UI/UX Design">UI/UX Design</option>
@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="formbold-mb-5">
-                            <label for="type" class="formbold-form-label"> Salary Type </label>
+                            <label for="type" class="formbold-form-label"> Choose Salary Type </label>
                             <select name="salary_type" class="form-select" required>
                                 <option value="hourly">hourly</option>
                                 <option value="monthly">monthly</option>
@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="formbold-mb-5">
-                            <label for="job_location" class="formbold-form-label"> Job Location </label>
+                            <label for="job_location" class="formbold-form-label"> Choose Job Location </label>
                             <select name="job_location" class="form-select" required>
                                 <option value="Western Province">Western Province</option>
                                 <option value="Central Province">Central Province</option>
@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="formbold-mb-5">
-                            <label for="job_nature" class="formbold-form-label"> Job Nature </label>
+                            <label for="job_nature" class="formbold-form-label"> Choose Job Nature </label>
                             <select name="job_nature" class="form-select" required>
                                 <option value="Full Time">Full Time</option>
                                 <option value="Part Time">Part Time</option>
