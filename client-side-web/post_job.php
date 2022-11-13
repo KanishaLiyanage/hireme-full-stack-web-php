@@ -68,14 +68,12 @@
 
             <div class="formbold-main-wrapper">
                 <div class="formbold-form-wrapper">
-                    <div class="formbold-mb-5 formbold-pt-3">
-                    </div>
 
                     <form action="../client-side-web/components/publish.php" method="POST">
 
                         <div class="formbold-mb-5">
                             <label for="category" class="formbold-form-label"> Category </label>
-                            <select name="job_category" class="form-select">
+                            <select name="job_category" class="form-select" required>
                                 <option value="Banking and Insurance">Banking and Insurance</option>
                                 <option value="UI/UX Design">UI/UX Design</option>
                                 <option value="Sales and Marketing">Sales and Marketing</option>
@@ -92,17 +90,17 @@
 
                         <div class="formbold-mb-5">
                             <label for="role" class="formbold-form-label"> Job Role </label>
-                            <input type="text" name="job_role" id="job_role" placeholder="Enter the job role" class="formbold-form-input" />
+                            <input type="text" name="job_role" id="job_role" placeholder="Enter the job role" class="formbold-form-input" required/>
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="salary" class="formbold-form-label"> Salary </label>
-                            <input type="text" name="salary" id="salary" placeholder="Enter the salary in Dollors" class="formbold-form-input" />
+                            <input type="text" name="salary" id="salary" placeholder="Enter the salary in Dollors" class="formbold-form-input" required/>
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="type" class="formbold-form-label"> Salary Type </label>
-                            <select name="salary_type" class="form-select">
+                            <select name="salary_type" class="form-select" required>
                                 <option value="hourly">hourly</option>
                                 <option value="monthly">monthly</option>
                                 <option value="yearly">yearly</option>
@@ -114,7 +112,7 @@
 
                         <div class="formbold-mb-5">
                             <label for="job_location" class="formbold-form-label"> Job Location </label>
-                            <select name="job_location" class="form-select">
+                            <select name="job_location" class="form-select" required>
                                 <option value="Western Province">Western Province</option>
                                 <option value="Central Province">Central Province</option>
                                 <option value="Southern Province">Southern Province</option>
@@ -127,17 +125,17 @@
 
                         <div class="formbold-mb-5">
                             <label for="description" class="formbold-form-label"> Job Description </label>
-                            <textarea name="description" rows="4" cols="50" class="formbold-form-input" /></textarea>
+                            <textarea name="description" rows="4" cols="50" class="formbold-form-input" required /></textarea>
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="vacancies" class="formbold-form-label"> Vacancies </label>
-                            <input type="text" name="vacancies" id="vacancies" placeholder="Enter the number of vacancies" class="formbold-form-input" />
+                            <input type="text" name="vacancies" id="vacancies" placeholder="Enter the number of vacancies" class="formbold-form-input" required />
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="job_nature" class="formbold-form-label"> Job Nature </label>
-                            <select name="job_nature" class="form-select">
+                            <select name="job_nature" class="form-select" required>
                                 <option value="Full Time">Full Time</option>
                                 <option value="Part Time">Part Time</option>
                                 <option value="Remote">Remote</option>
@@ -150,17 +148,17 @@
 
                         <div class="formbold-mb-5">
                             <label for="requirement_skills" class="formbold-form-label"> Required Skills </label>
-                            <textarea name="requirement_skills" rows="4" cols="50" class="formbold-form-input" /></textarea>
+                            <textarea name="requirement_skills" rows="4" cols="50" class="formbold-form-input" required /></textarea>
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="education_and_experience" class="formbold-form-label"> Education and Experience </label>
-                            <textarea name="education_and_experience" rows="4" cols="50" class="formbold-form-input" /></textarea>
+                            <textarea name="education_and_experience" rows="4" cols="50" class="formbold-form-input" required /></textarea>
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="deadline" class="formbold-form-label"> Application Deadline </label>
-                            <input type="text" name="deadline" id="deadline" placeholder="Enter the application deadline date" class="formbold-form-input" />
+                            <input type="text" name="deadline" id="deadline" placeholder="Date Month Year  (Ex: 01 Jan 2023)" class="formbold-form-input" required />
                         </div>
 
                         <div class="formbold-mb-5 formbold-pt-3">
@@ -172,9 +170,6 @@
                     </form>
                 </div>
             </div>
-
-
-
 
         </center>
 
