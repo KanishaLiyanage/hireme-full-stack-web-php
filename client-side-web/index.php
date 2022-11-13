@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../client-side-web/css/slick.css">
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
+    <link rel="stylesheet" href="../client-side-web/css/form.css">
 </head>
 
 <body>
@@ -88,6 +89,56 @@
             </div>
         </div>
         <!-- slider Area End-->
+
+        <form action="../client-side-web/filter.php" method="POST">
+            <div class="grid-container">
+                <div>
+                    <h5>Job Category</h5>
+                </div>
+                <div>
+                    <select name="job_category">
+                        <option value="All Category">All Category</option>
+                        <option value="Banking and Insurance">Banking and Insurance</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Sales and Marketing">Sales and Marketing</option>
+                        <option value="Telecommunication">Telecommunication</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Architecture">Architecture</option>
+                        <option value="Accounting and Auditing">Accounting and Auditing</option>
+                    </select>
+                </div>
+
+                <div>
+                    <h4>Job Location</h4>
+                </div>
+                <div>
+                    <select name="job_location">
+                        <option value="Anywhere">Anywhere</option>
+                        <option value="Western Province">Western Province</option>
+                        <option value="Central Province">Central Province</option>
+                        <option value="Southern Province">Southern Province</option>
+                        <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+                    </select>
+                </div>
+                <div>
+                    <h4>Salary Between ($)</h4>
+                </div>
+                <div>
+                    <select name="salary">
+                        <option value="Any">Any</option>
+                        <option value="1">1000-2000</option>
+                        <option value="2">2000-3000</option>
+                        <option value="3">3000-4000</option>
+                        <option value="4">4000-5000</option>
+                        <option value="5">5000-more..</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <input type="submit" name='submit' value="Filter">
+                </div>
+            </div>
+        </form>
 
         <!-- Our Services Start -->
         <div class="our-services section-pad-t30">

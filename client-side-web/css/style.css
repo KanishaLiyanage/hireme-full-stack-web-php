@@ -6932,7 +6932,7 @@ form.search-box .search-form a {
     outline: 0
 }
 
-.bottom-text{
+.bottom-text {
     text-align: center;
 }
 
@@ -7588,4 +7588,11 @@ form.search-box .search-form a {
     outline: 0;
     background: #242b5e;
     color: #fff
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }

@@ -1,77 +1,6 @@
 <?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
-<?php
-
-if (isset($_POST['submit'])) {
-
-
-    $cat = mysqli_real_escape_string($connection, $_POST['job_category']);
-    $j_loc = mysqli_real_escape_string($connection, $_POST['job_location']);
-    $sal = mysqli_real_escape_string($connection, $_POST['salary']);
-    $sal2 = "";
-
-    if ($sal == 1) {
-        $sal = 1000;
-        $sal2 = 2000;
-    } elseif ($sal == 2) {
-        $sal = 2000;
-        $sal2 = 3000;
-    } elseif ($sal == 3) {
-        $sal = 3000;
-        $sal2 = 4000;
-    } elseif ($sal == 4) {
-        $sal = 4000;
-        $sal2 = 5000;
-    } elseif ($sal == 5) {
-        $sal = 5000;
-    }
-
-    if ($cat == "All Category" && $j_loc == "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs";
-    } elseif ($cat != "All Category" && $j_loc == "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'";
-    } elseif ($cat == "All Category" && $j_loc != "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            location = '{$j_loc}'";
-    } elseif ($cat == "All Category" && $j_loc == "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } elseif ($cat != "All Category" && $j_loc != "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            location = '{$j_loc}'";
-    } elseif ($cat == "All Category" && $j_loc != "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            location = '{$j_loc}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } elseif ($cat != "All Category" && $j_loc == "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } else {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            location = '{$j_loc}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    }
-}
-
-?>
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -131,6 +60,7 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
         <!-- Hero Area End -->
+
         <!-- Job List Area Start -->
         <div class="job-listing-area pt-120 pb-120">
             <div class="container">
@@ -150,7 +80,7 @@ if (isset($_POST['submit'])) {
                         </div>
 
                         <!-- Job Category Listing start -->
-                        <form action="../client-side-web/find_jobs.php" method="POST">
+                        <form action="../client-side-web/filter.php" method="POST">
                             <div class="job-category-listing mb-50">
                                 <!-- single one -->
                                 <div class="single-listing">
@@ -199,157 +129,60 @@ if (isset($_POST['submit'])) {
                                             <input type="radio" id="sal0" name="salary" value="Any" checked="true">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">1-2K
+                                        <label class="container">1000-2000
                                             <input type="radio" id="sal1" name="salary" value="1">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">2-3K
+                                        <label class="container">2000-3000
                                             <input type="radio" id="sal2" name="salary" value="2">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">3-4K
+                                        <label class="container">3000-4000
                                             <input type="radio" id="sal3" name="salary" value="3">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">4-5K
+                                        <label class="container">4000-5000
                                             <input type="radio" id="sal3" name="salary" value="4">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">5K-more..
+                                        <label class="container">5000-more..
                                             <input type="radio" id="sal4" name="salary" value="5">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="single-listing">
-
-                                </div class="button"><input type="submit" name='submit' value="Filter">
-
+                                    <div class="button">
+                                        <input type="submit" name='submit' value="Filter">
+                                    </div>
+                                </div>
                             </div>
                             <!-- Job Category Listing End -->
                     </div>
                     </form>
 
-                    <!-- Right content -->
-                    <div class="col-xl-9 col-lg-9 col-md-8">
-                        <!-- Featured_job_start -->
-                        <section class="featured-job-area">
-                            <div class="container">
-                                <!-- single-job-content -->
-                                <?php
+                    <?php require_once('../client-side-web/job_list.php'); ?>
 
-                                $query = "SELECT * FROM jobs";
-
-                                $result1 = mysqli_query($connection, $query);
-                                ?>
-
-                                <!-- Count of Job list Start -->
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="count-job mb-35">
-                                            <span><?php echo mysqli_num_rows($result1) ?> Jobs found</span>
-                                            <!-- Select job items start -->
-                                            <div class="select-job-items">
-                                                <span>Sort by</span>
-                                                <select name="select">
-                                                    <option value="">None</option>
-                                                    <option value="">job list</option>
-                                                    <option value="">job list</option>
-                                                    <option value="">job list</option>
-                                                </select>
-                                            </div>
-                                            <!--  Select job items End-->
-                                        </div>
+                    <!--Pagination Start  -->
+                    <div class="pagination-area pb-115 text-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="single-wrap d-flex justify-content-center">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-start">
+                                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
+                                            </ul>
+                                        </nav>
                                     </div>
                                 </div>
-                                <!-- Count of Job list End -->
-                                <?php
-
-                                if ($result1) { ?>
-
-                                    <?php
-
-                                    if (mysqli_num_rows($result1) > 0) { ?>
-
-                                        <?php while ($record1 = mysqli_fetch_array($result1)) {
-
-                                            $_GET['j_id'] = $record1['job_id'];
-                                            $com_id = $record1['company_id'];
-
-                                            $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
-                                            $result2 = mysqli_query($connection, $query2);
-
-                                            if ($result2) {
-
-                                                while ($record2 = mysqli_fetch_array($result2)) {
-
-                                        ?>
-                                                    <div class="single-job-items mb-30">
-                                                        <div class="job-items">
-                                                            <div class="company-img">
-                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
-                                                            </div>
-                                                            <div class="job-tittle">
-                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
-                                                                    <h4><?php echo strtoupper($record1['job_role']) ?></h4>
-                                                                </a>
-                                                                <ul>
-                                                                    <li><?php echo $record2['company_name'] ?></li>
-                                                                    <li><i class="fas fa-map-marker-alt"></i><?php echo $record1['location'] ?></li>
-                                                                    <li>$<?php echo $record1['salary'] ?></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="items-link f-right">
-                                                            <a href="job_details.php"><?php echo $record1['job_nature'] ?></a>
-                                                            <span><?php echo $record1['posted_date'] ?></span>
-                                                        </div>
-                                                    </div>
-
-                                                <?php
-                                                }
-
-                                                ?>
-
-                                        <?php
-
-                                            }
-                                        } ?>
-
-                                <?php }
-                                } else {
-                                    echo "DB failed!";
-                                }
-
-                                ?>
                             </div>
-                        </section>
-                        <!-- Featured_job_end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Job List Area End -->
-        <!--Pagination Start  -->
-        <div class="pagination-area pb-115 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="single-wrap d-flex justify-content-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                    <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!--Pagination End  -->
+                    <!--Pagination End  -->
 
     </main>
 
