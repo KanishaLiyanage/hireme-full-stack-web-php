@@ -106,92 +106,101 @@
                 </div>
                 <div class="row d-flex justify-contnet-center">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-tour"></span>
+                        <a href="category.php?job_cat=Banking and Insurance">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-tour"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Banking and Insurance</h5>
+                                    <span>(653)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Banking and Insurance">Banking and Insurance</a></h5>
-                                <span>(653)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-cms"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=UI/UX Design">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-cms"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>UI/UX Design</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=UI/UX Design">UI/UX Design</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-report"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=Sales and Marketing">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-report"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Sales and Marketing</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Sales and Marketing">Sales and Marketing</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-app"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=Telecommunication">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-app"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Telecommunication</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Telecommunication">Telecommunication</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-helmet"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=Construction">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-helmet"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Construction</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Construction">Construction</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-high-tech"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=Information Technology">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-high-tech"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Information Technology</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Information Technology">Information Technology</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-real-estate"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=Architecture">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-real-estate"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Architecture</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Architecture">Architecture</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-content"></span>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6"><a href="category.php?job_cat=Accounting and Auditing">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="flaticon-content"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5>Accounting and Auditing</h5>
+                                    <span>(658)</span>
+                                </div>
                             </div>
-                            <div class="services-cap">
-                                <h5><a href="category.php?job_cat=Accounting and Auditing">Accounting and Auditing</a></h5>
-                                <span>(658)</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <!-- More Btn -->
