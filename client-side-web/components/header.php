@@ -18,7 +18,7 @@
                                     <ul id="navigation">
                                         <li><a href="index.php">Home</a></li>
                                         <li><a href="find_jobs.php">Find Jobs</a></li>
-                                        <li><a href="#post-job">Post a Job</a></li>
+                                        <li><a href="post_job.php">Post a Job</a></li>
                                         <li><a href="about.php">About</a></li>
                                         <li><a href="contact.php">Contact</a></li>
                                     </ul>

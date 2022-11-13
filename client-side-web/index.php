@@ -385,7 +385,7 @@
                                 <p>Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlore eu
                                     quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt
                                     mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.</p>
-                                <a href="about.php" class="btn post-btn">Post a job</a>
+                                <a href="post_job.php" class="btn post-btn">Post a job</a>
                             </div>
                         </div>
                     </div>
