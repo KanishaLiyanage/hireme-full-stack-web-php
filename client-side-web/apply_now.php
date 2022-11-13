@@ -76,14 +76,49 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
 
         <center>
 
-            <form action="../client-side-web/components/application.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
+            <div class="formbold-main-wrapper">
+                <div class="formbold-form-wrapper">
+                    <div class="formbold-mb-5 formbold-pt-3">
+                    </div>
 
-                Upload your CV: <input type="file" name="cv">
-                <br>
+                    <form action="../client-side-web/components/application.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
+                        <div class="formbold-mb-5">
+                            <label for="name" class="formbold-form-label"> Full Name </label>
+                            <input type="text" name="full_name" id="name" placeholder="Full Name" class="formbold-form-input" />
+                        </div>
+                        <div class="formbold-mb-5">
+                            <label for="phone" class="formbold-form-label"> Mobile Number </label>
+                            <input type="text" name="mobile_no" id="phone" placeholder="Enter your phone number" class="formbold-form-input" />
+                        </div>
+                        <div class="formbold-mb-5">
+                            <label for="email" class="formbold-form-label"> Email Address </label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input" />
+                        </div>
+                        <div class="flex flex-wrap formbold--mx-3">
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5 w-full">
+                                    <label for="date" class="formbold-form-label"> CV </label>
+                                    <input type="file" name="cv" class="formbold-form-input" />
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5">
+                                    <label for="time" class="formbold-form-label"> Cover Letter </label>
+                                    <input type="file" name="cover_letter" class="formbold-form-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbold-mb-5 formbold-pt-3">
+                        </div>
 
-                <input type="submit" name="submit" value="Submit Application">
+                        <div>
+                            <input type="submit" value="Apply" class="formbold-btn">
+                        </div>
 
-            </form>
+                    </form>
+
+                </div>
+            </div>
 
         </center>
 

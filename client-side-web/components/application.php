@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && isset($_GET['job_id']) && isset($_GET['company_id
     $result = mysqli_query($connection, $query);
 
     if ($result) {
-        header("Location: ../apply_now.php");
+        header("Location: ../index.php");
     } else {
         header('Location: error.php');
     }
