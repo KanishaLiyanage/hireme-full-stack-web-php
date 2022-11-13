@@ -92,7 +92,7 @@ if (!isset($_GET['job_cat'])) {
                             </div>
                         </div>
 
-                        <form action="../client-side-web/components/filter.php" method="POST">
+                        <form action="../client-side-web/filter.php" method="POST">
                             <div class="job-category-listing mb-50">
                                 <!-- single one -->
                                 <div class="single-listing">

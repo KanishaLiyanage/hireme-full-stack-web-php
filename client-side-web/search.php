@@ -5,67 +5,19 @@
 
 if (isset($_POST['submit'])) {
 
-    $cat = mysqli_real_escape_string($connection, $_POST['job_category']);
+    $key = mysqli_real_escape_string($connection, $_POST['keyword']);
     $j_loc = mysqli_real_escape_string($connection, $_POST['job_location']);
-    $sal = mysqli_real_escape_string($connection, $_POST['salary']);
-    $sal2 = "";
 
-    if ($sal == 1) {
-        $sal = 1000;
-        $sal2 = 2000;
-    } elseif ($sal == 2) {
-        $sal = 2000;
-        $sal2 = 3000;
-    } elseif ($sal == 3) {
-        $sal = 3000;
-        $sal2 = 4000;
-    } elseif ($sal == 4) {
-        $sal = 4000;
-        $sal2 = 5000;
-    } elseif ($sal == 5) {
-        $sal = 5000;
-    }
-
-    if ($cat == "All Category" && $j_loc == "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs";
-    } elseif ($cat != "All Category" && $j_loc == "Anywhere" && $sal == "Any") {
+    if (isset($key) && $j_loc == "Anywhere") {
         $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'";
-    } elseif ($cat == "All Category" && $j_loc != "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            location = '{$j_loc}'";
-    } elseif ($cat == "All Category" && $j_loc == "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } elseif ($cat != "All Category" && $j_loc != "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            location = '{$j_loc}'";
-    } elseif ($cat == "All Category" && $j_loc != "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            location = '{$j_loc}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } elseif ($cat != "All Category" && $j_loc == "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
+                  WHERE
+                  job_role = '{$key}'";
     } else {
         $query = "SELECT * FROM jobs
             WHERE
-            category = '{$cat}'
+            job_role = '{$key}'
             AND
-            location = '{$j_loc}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
+            location = '{$j_loc}'";
     }
 } else {
 
@@ -81,7 +33,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtered List</title>
+    <title>Search Result</title>
 
     <!-- CSS here -->
     <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
@@ -110,7 +62,7 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Filter Results</h2>
+                                <h2>Search Result</h2>
                             </div>
                         </div>
                     </div>

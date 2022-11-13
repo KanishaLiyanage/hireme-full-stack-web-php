@@ -7596,3 +7596,13 @@ form.search-box .search-form a {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+.filter-warning{
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.filter-warning h1{
+    text-align: center;
+}

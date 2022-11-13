@@ -64,23 +64,31 @@
                         <div class="row">
                             <div class="col-xl-8">
                                 <!-- form -->
-                                <form action="#" class="search-box">
+                                <form action="../client-side-web/search.php" class="search-box" method="POST">
                                     <div class="input-form">
-                                        <input type="text" placeholder="Job Tittle or keyword">
+                                        <input type="text" name="keyword" placeholder="Job Role or Keyword">
                                     </div>
+
                                     <div class="select-form">
                                         <div class="select-itms">
-                                            <select name="select" id="select1">
-                                                <option value="">Western Province</option>
-                                                <option value="">Central Province</option>
-                                                <option value="">Southern Province</option>
-                                                <option value="">Sabaragamuwa Province</option>
+                                            <select name="job_location" id="select1">
+                                                <option value="Anywhere">Anywhere</option>
+                                                <option value="Western Province">Western Province</option>
+                                                <option value="Central Province">Central Province</option>
+                                                <option value="Southern Province">Southern Province</option>
+                                                <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
                                             </select>
                                         </div>
                                     </div>
+
+                                    <div class="button">
+                                        <input type="submit" name='submit' value="Filter">
+                                    </div>
+
                                     <div class="search-form">
                                         <a href="#">Find job</a>
                                     </div>
+
                                 </form>
                             </div>
                         </div>
@@ -89,56 +97,6 @@
             </div>
         </div>
         <!-- slider Area End-->
-
-        <form action="../client-side-web/filter.php" method="POST">
-            <div class="grid-container">
-                <div>
-                    <h5>Job Category</h5>
-                </div>
-                <div>
-                    <select name="job_category">
-                        <option value="All Category">All Category</option>
-                        <option value="Banking and Insurance">Banking and Insurance</option>
-                        <option value="UI/UX Design">UI/UX Design</option>
-                        <option value="Sales and Marketing">Sales and Marketing</option>
-                        <option value="Telecommunication">Telecommunication</option>
-                        <option value="Construction">Construction</option>
-                        <option value="Information Technology">Information Technology</option>
-                        <option value="Architecture">Architecture</option>
-                        <option value="Accounting and Auditing">Accounting and Auditing</option>
-                    </select>
-                </div>
-
-                <div>
-                    <h4>Job Location</h4>
-                </div>
-                <div>
-                    <select name="job_location">
-                        <option value="Anywhere">Anywhere</option>
-                        <option value="Western Province">Western Province</option>
-                        <option value="Central Province">Central Province</option>
-                        <option value="Southern Province">Southern Province</option>
-                        <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
-                    </select>
-                </div>
-                <div>
-                    <h4>Salary Between ($)</h4>
-                </div>
-                <div>
-                    <select name="salary">
-                        <option value="Any">Any</option>
-                        <option value="1">1000-2000</option>
-                        <option value="2">2000-3000</option>
-                        <option value="3">3000-4000</option>
-                        <option value="4">4000-5000</option>
-                        <option value="5">5000-more..</option>
-                    </select>
-                </div>
-                <div class="button">
-                    <input type="submit" name='submit' value="Filter">
-                </div>
-            </div>
-        </form>
 
         <!-- Our Services Start -->
         <div class="our-services section-pad-t30">
