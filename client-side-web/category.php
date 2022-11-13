@@ -156,9 +156,8 @@ if (!isset($_GET['job_cat'])) {
                                     </div>
                                 </div>
                                 <div class="single-listing">
-
-                                </div class="button"><input type="submit" name='submit' value="Filter">
-
+                                    <input class="filter-form" type="submit" name='submit' value="Filter">
+                                </div>
                             </div>
                             <!-- Job Category Listing End -->
                     </div>
@@ -209,6 +208,7 @@ if (!isset($_GET['job_cat'])) {
 
                                             $_GET['j_id'] = $record1['job_id'];
                                             $com_id = $record1['company_id'];
+                                            $_GET['com_id'] = $record1['company_id'];
 
                                             $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
                                             $result2 = mysqli_query($connection, $query2);
@@ -221,10 +221,10 @@ if (!isset($_GET['job_cat'])) {
                                                     <div class="single-job-items mb-30">
                                                         <div class="job-items">
                                                             <div class="company-img">
-                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record1['company_id']; ?>"></a>
+                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record1['company_id']; ?>"></a>
                                                             </div>
                                                             <div class="job-tittle">
-                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>">
+                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
                                                                     <h4><?php echo strtoupper($record1['job_role']) ?></h4>
                                                                 </a>
                                                                 <ul>
@@ -235,7 +235,7 @@ if (!isset($_GET['job_cat'])) {
                                                             </div>
                                                         </div>
                                                         <div class="items-link f-right">
-                                                            <a href="job_details.php"><?php echo $record1['job_nature'] ?></a>
+                                                            <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><?php echo $record1['job_nature'] ?></a>
                                                             <span><?php echo $record1['posted_date'] ?></span>
                                                         </div>
                                                     </div>
