@@ -66,7 +66,7 @@
                                 <!-- form -->
                                 <form action="../client-side-web/search.php" class="search-box" method="POST">
                                     <div class="input-form">
-                                        <input type="text" name="keyword" placeholder="Job Role or Keyword">
+                                        <input type="text" name="keyword" placeholder="Job Role or Keyword" required>
                                     </div>
 
                                     <div class="select-form">
@@ -81,13 +81,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="button">
-                                        <input type="submit" name='submit' value="Filter">
-                                    </div>
-
-                                    <div class="search-form">
-                                        <a href="#">Find job</a>
-                                    </div>
+                                    <input class="search-form" type="submit" name='submit' value="Find job">
 
                                 </form>
                             </div>

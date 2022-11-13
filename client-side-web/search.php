@@ -11,11 +11,11 @@ if (isset($_POST['submit'])) {
     if (isset($key) && $j_loc == "Anywhere") {
         $query = "SELECT * FROM jobs
                   WHERE
-                  job_role = '{$key}'";
+                  job_role LIKE '%{$key}%'";
     } else {
         $query = "SELECT * FROM jobs
             WHERE
-            job_role = '{$key}'
+            job_role LIKE '%{$key}%'
             AND
             location = '{$j_loc}'";
     }
