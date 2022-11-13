@@ -76,11 +76,56 @@
                                 </div>
                                 <div class="testimonial-top-cap">
                                     <p>
-                                        “I am at an age where I just want to be fit and healthy
-                                        our bodies are our responsibility! So start caring for
-                                        your body and it will care for you. Eat clean it will
-                                        care for you and workout hard.”
+                                        Activities Log
                                     </p>
+                                    <div>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Application ID</th>
+                                                    <th scope="col">Job Title</th>
+                                                    <th scope="col">Full name</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Mobile Number</th>
+                                                    <th scope="col">CV</th>
+                                                    <th scope="col">Cover Letter</th>
+                                                    <th scope="col">Applied Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
