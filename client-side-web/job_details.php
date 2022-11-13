@@ -167,7 +167,7 @@ if (isset($_GET['job_id'])) {
                                                 <li>Application Deadline : <span><?php echo $record1['deadline'] ?></span></li>
                                             </ul>
                                             <div class="apply-btn2">
-                                                <a href="#" class="btn">Apply Now</a>
+                                                <a href="apply_now.php" class="btn">Apply Now</a>
                                             </div>
                                         </div>
                                         <div class="post-details4  mb-50">
