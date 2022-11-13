@@ -152,9 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="single-listing">
-                                    <div class="button">
-                                        <input type="submit" name='submit' value="Filter">
-                                    </div>
+                                    <input class="filter-form" type="submit" name='submit' value="Filter">
                                 </div>
                             </div>
                             <!-- Job Category Listing End -->

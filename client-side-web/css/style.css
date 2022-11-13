@@ -424,7 +424,7 @@ hr {
     top: 0;
     width: 101%;
     height: 101%;
-    background: #da2461;
+    background: #237A00;
     z-index: 1;
     border-radius: 5px;
     transition: transform 0.5s;
@@ -513,7 +513,7 @@ hr {
     top: 0;
     width: 120%;
     height: 105%;
-    background: #da2461;
+    background: #237A00;
     z-index: -1;
     transition: transform 0.5s;
     transition-timing-function: ease;
@@ -6002,6 +6002,26 @@ form.search-box .search-form {
     font-size: 14px
 }
 
+.filter-form {
+    width: 40%;
+    height: 3%;
+    background: #00B074;
+    cursor: pointer;
+    border: transparent;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    display: block;
+    border-radius: 2px;
+    text-transform: capitalize;
+    font-family: "Muli", sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    line-height: 38px;
+    font-size: 14px
+}
+
 @media (max-width: 767px) {
     form.search-box .search-form {
         width: 100%
@@ -6862,8 +6882,8 @@ form.search-box .search-form a {
 }
 
 .testimonial-area .dot-style .slick-dots .slick-active button {
-    background: #ff4357;
-    background: #ff4357;
+    background: #00B074;
+    background: #00B074;
     height: 12px;
     width: 12px;
     position: relative;
@@ -7441,7 +7461,7 @@ form.search-box .search-form a {
 }
 
 .job-category-listing .single-listing .select-Categories .container input:checked~.checkmark {
-    background-color: #ff4357;
+    background-color: #00B074;
     border: 2px solid transparent
 }
 
