@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2022 at 01:37 PM
+-- Generation Time: Nov 14, 2022 at 05:47 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,6 +45,10 @@ CREATE TABLE `applications` (
   `client_id` int(10) NOT NULL,
   `job_id` int(10) NOT NULL,
   `company_id` int(10) NOT NULL,
+  `full_name` varchar(200) NOT NULL,
+  `mobile_number` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `cover_letter` text NOT NULL,
   `cv` text NOT NULL,
   `application_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -57,10 +61,12 @@ CREATE TABLE `applications` (
 
 CREATE TABLE `clients` (
   `client_id` int(10) NOT NULL,
-  `client_username` varchar(10) NOT NULL,
-  `client_email` varchar(100) NOT NULL,
-  `client_password` varchar(50) NOT NULL,
-  `client_profile_picture` text NOT NULL
+  `username` varchar(10) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `profile_picture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -180,7 +186,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `application_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `application_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `clients`
