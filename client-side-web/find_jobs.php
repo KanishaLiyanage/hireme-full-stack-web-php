@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
     <link rel="stylesheet" href="../client-side-web/css/footer.css">
-    
+
 </head>
 
 <body>
@@ -158,8 +158,8 @@
                                 </div>
                             </div>
                             <!-- Job Category Listing End -->
+                        </form>
                     </div>
-                    </form>
 
                     <?php require_once('../client-side-web/job_list.php'); ?>
 

@@ -122,21 +122,15 @@ if (isset($_POST['submit'])) {
         </div>
         <!-- Hero Area End -->
 
-        <!-- Featured_job_start -->
-        <section class="featured-job-area feature-padding">
-            <div class="container">
+        <section class="featured-job-area filterContainer">
 
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
-
-                        <!-- single-job-content -->
                         <?php
-
-                        $query = "SELECT * FROM jobs
-                                  ORDER BY posted_date DESC
-                                  LIMIT 5";
-
                         $result1 = mysqli_query($connection, $query);
+                        ?>
+                        <?php
 
                         if ($result1) { ?>
 
@@ -190,7 +184,13 @@ if (isset($_POST['submit'])) {
                                     }
                                 } ?>
 
-                        <?php }
+                            <?php } else {
+                            ?>
+                                <div class="filter-warning">
+                                    <h1>Ooops... No any matches!</h1>
+                                </div>
+                        <?php
+                            }
                         } else {
                             echo "DB failed!";
                         }
@@ -201,94 +201,6 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </section>
-        <!-- Featured_job_end -->
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="col-xl-9 col-lg-9 col-md-8 center">
-            <section class="featured-job-area">
-                <div class="container">
-                    <?php
-                    $result1 = mysqli_query($connection, $query);
-                    ?>
-                    <?php
-
-                    if ($result1) { ?>
-
-                        <?php
-
-                        if (mysqli_num_rows($result1) > 0) { ?>
-
-                            <?php while ($record1 = mysqli_fetch_array($result1)) {
-
-                                $_GET['j_id'] = $record1['job_id'];
-                                $com_id = $record1['company_id'];
-                                $_GET['com_id'] = $record1['company_id'];
-
-                                $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
-                                $result2 = mysqli_query($connection, $query2);
-
-                                if ($result2) {
-
-                                    while ($record2 = mysqli_fetch_array($result2)) {
-
-                            ?>
-                                        <div class="single-job-items mb-30">
-                                            <div class="job-items">
-                                                <div class="company-img">
-                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
-                                                </div>
-                                                <div class="job-tittle">
-                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
-                                                        <h4><?php echo strtoupper($record1['job_role']) ?></h4>
-                                                    </a>
-                                                    <ul>
-                                                        <li><?php echo $record2['company_name'] ?></li>
-                                                        <li><i class="fas fa-map-marker-alt"></i><?php echo $record1['location'] ?></li>
-                                                        <li>$<?php echo $record1['salary'] ?></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="items-link f-right">
-                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><?php echo $record1['job_nature'] ?></a>
-                                                <span><?php echo $record1['posted_date'] ?></span>
-                                            </div>
-                                        </div>
-
-                                    <?php
-                                    }
-
-                                    ?>
-
-                            <?php
-
-                                }
-                            } ?>
-
-                        <?php } else {
-                        ?>
-                            <div class="filter-warning">
-                                <h1>Ooops... No any matches!</h1>
-                            </div>
-                    <?php
-                        }
-                    } else {
-                        echo "DB failed!";
-                    }
-
-                    ?>
-                </div>
-            </section>
-        </div>
 
     </main>
 

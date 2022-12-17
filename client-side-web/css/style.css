@@ -7494,6 +7494,11 @@ form.search-box .search-form a {
     }
 }
 
-.drop{
+.drop {
     height: 50px;
+}
+
+.filterContainer {
+    padding-top: 80px;
+    padding-bottom: 80px
 }
