@@ -25,6 +25,8 @@
         <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
         <link rel="stylesheet" href="../client-side-web/css/style.css">
         <link rel="stylesheet" href="../client-side-web/css/responsive.css">
+        <link rel="stylesheet" href="../client-side-web/css/footer.css">
+
     </head>
 
     <body>

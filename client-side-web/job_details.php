@@ -7,7 +7,7 @@ $j_id = " ";
 $com_id = " ";
 
 if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
-    echo "Both IDs passed!";
+    // echo "Both IDs passed!";
     $_GET['com_id'] = $_GET['company_id'];
     $_GET['j_id'] = $_GET['job_id'];
 } else {
@@ -41,6 +41,8 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
     <link rel="stylesheet" href="../client-side-web/css/slick.css">
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
+    <link rel="stylesheet" href="../client-side-web/css/footer.css">
+    
 </head>
 
 <body>

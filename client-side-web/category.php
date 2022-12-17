@@ -40,6 +40,8 @@ if (!isset($_GET['job_cat'])) {
     <link rel="stylesheet" href="../client-side-web/css/slick.css">
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
+    <link rel="stylesheet" href="../client-side-web/css/footer.css">
+
 </head>
 
 <body>

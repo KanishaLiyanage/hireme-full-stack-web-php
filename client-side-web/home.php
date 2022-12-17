@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <!-- Preloader Start -->
+
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -42,13 +42,11 @@
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
 
     <?php require_once('../client-side-web/components/header.php'); ?>
 
     <main>
 
-        <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
@@ -91,7 +89,6 @@
                 </div>
             </div>
         </div>
-        <!-- slider Area End-->
 
         <!-- Our Services Start -->
         <div class="our-services section-pad-t30">

@@ -36,6 +36,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
     <link rel="stylesheet" href="../client-side-web/css/form.css">
+    <link rel="stylesheet" href="../client-side-web/css/footer.css">
 
 </head>
 

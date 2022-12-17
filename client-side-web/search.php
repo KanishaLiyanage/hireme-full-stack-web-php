@@ -35,6 +35,8 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HireME | Search Result</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+
     <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
     <link rel="stylesheet" href="../client-side-web/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../client-side-web/css/price_rangs.css">
@@ -47,6 +49,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="../client-side-web/css/slick.css">
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
+    <link rel="stylesheet" href="../client-side-web/css/footer.css">
 
 </head>
 
