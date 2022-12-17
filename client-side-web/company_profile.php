@@ -3,13 +3,13 @@
 
 <?php
 
-$applicant_id = 1;
+$company_id = 1;
 
-$query = "SELECT * FROM applicants
+$query = "SELECT * FROM companies
           WHERE
-          applicant_id = '{$applicant_id}'
+          company_id = '{$company_id}'
           AND
-          applicant_recycle_bin = 0
+          company_recycle_bin = 0
           LIMIT 1";
 
 $result = mysqli_query($connection, $query);
@@ -20,7 +20,7 @@ if ($result) {
 
         <?php while ($record = mysqli_fetch_array($result)) {
 
-            $_GET['applicant_id'] = $record['applicant_id'];
+            $_GET['company_id'] = $record['company_id'];
 
         ?>
 
@@ -30,7 +30,7 @@ if ($result) {
             <head>
                 <meta charset="utf-8">
                 <meta http-equiv="x-ua-compatible" content="ie=edge">
-                <title>HireME | <?php echo $record['applicant_username'] ?></title>
+                <title>HireME | <?php echo $record['company_name'] ?></title>
                 <meta name="description" content="">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="manifest" href="site.webmanifest">
@@ -80,7 +80,7 @@ if ($result) {
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="hero-cap text-center">
-                                            <h2><?php echo $record['applicant_username'] ?></h2>
+                                            <h2><?php echo $record['company_name'] ?></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -93,16 +93,16 @@ if ($result) {
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-img">
-                                    <img src="../assets/uploads/applicants/profile-pictures/<?php echo $record['applicant_profile_picture'] ?>" />
+                                    <img src="../assets/uploads/companies/company-logo/<?php echo $record['company_logo'] ?>" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="profile-head">
                                     <h5>
-                                        <?php echo $record['applicant_username'] ?>
+                                        <?php echo $record['company_name'] ?>
                                     </h5>
                                     <h6>
-                                        <?php echo $record['applicant_email'] ?>
+                                        <?php echo $record['company_email'] ?>
                                     </h6>
                                     <p class="proile-rating">MEMBER SINCE : <span>8/10</span></p>
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -113,7 +113,7 @@ if ($result) {
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <a href="./edit_applicant_profile.php">
+                                <a href="./edit_company_profile.php">
                                     <button class="profile-edit-btn">Edit Profile</button>
                                 </a>
                             </div>
@@ -139,7 +139,7 @@ if ($result) {
                                         <label>Username</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><?php echo $record['applicant_username'] ?></p>
+                                        <p><?php echo $record['company_username'] ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -147,23 +147,23 @@ if ($result) {
                                         <label>Email</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><?php echo $record['applicant_email'] ?></p>
+                                        <p><?php echo $record['company_email'] ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>First Name</label>
+                                        <label>Website</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><?php echo $record['applicant_first_name'] ?></p>
+                                        <p><?php echo $record['company_website'] ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Last Name</label>
+                                        <label>About</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><?php echo $record['applicant_last_name'] ?></p>
+                                        <p><?php echo $record['company_description'] ?></p>
                                     </div>
                                 </div>
                             </div>
