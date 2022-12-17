@@ -3,7 +3,7 @@
 
 <?php
 if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
-    echo "Both IDs passed!";
+    // echo "Both IDs passed!";
     $_GET['com_id'] = $_GET['company_id'];
     $_GET['j_id'] = $_GET['job_id'];
 } else {

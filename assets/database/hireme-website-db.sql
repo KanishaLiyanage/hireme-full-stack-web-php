@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2022 at 05:47 AM
+-- Generation Time: Dec 17, 2022 at 12:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `admin_id` int(10) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `admin_username` varchar(10) NOT NULL,
+  `admin_password` varchar(200) NOT NULL,
+  `admin_email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -45,12 +45,12 @@ CREATE TABLE `applications` (
   `client_id` int(10) NOT NULL,
   `job_id` int(10) NOT NULL,
   `company_id` int(10) NOT NULL,
-  `full_name` varchar(200) NOT NULL,
-  `mobile_number` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `cover_letter` text NOT NULL,
-  `cv` text NOT NULL,
-  `application_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `applicant_full_name` varchar(200) NOT NULL,
+  `applicant_mobile_number` varchar(50) NOT NULL,
+  `applicant_email` varchar(100) NOT NULL,
+  `applicant_cv` text NOT NULL,
+  `applicant_cover_letter` text NOT NULL,
+  `applied_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -61,12 +61,12 @@ CREATE TABLE `applications` (
 
 CREATE TABLE `clients` (
   `client_id` int(10) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `profile_picture` text NOT NULL
+  `client_username` varchar(10) NOT NULL,
+  `client_password` varchar(200) NOT NULL,
+  `client_first_name` varchar(50) NOT NULL,
+  `client_last_name` varchar(50) NOT NULL,
+  `client_email` varchar(100) NOT NULL,
+  `client_profile_picture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -77,6 +77,8 @@ CREATE TABLE `clients` (
 
 CREATE TABLE `companies` (
   `company_id` int(10) NOT NULL,
+  `company_username` varchar(10) NOT NULL,
+  `company_password` varchar(200) NOT NULL,
   `company_name` varchar(100) NOT NULL,
   `company_website` varchar(100) NOT NULL,
   `company_email` varchar(100) NOT NULL,
@@ -88,14 +90,14 @@ CREATE TABLE `companies` (
 -- Dumping data for table `companies`
 --
 
-INSERT INTO `companies` (`company_id`, `company_name`, `company_website`, `company_email`, `company_description`, `company_logo`) VALUES
-(1, 'Unilever', 'www.unilever.com', 'unilever.career@gmail.com', 'Unilever plc is a British multinational consumer goods company with headquarters in London, England. Unilever products include food, condiments, ice cream, cleaning agents, beauty products, and personal care. Unilever is the largest producer of soap in the world and its products are available in around 190 countries.', 'unilever.png'),
-(2, 'Mobitel (Pvt) Ltd', 'www.sltmobitel.lk', 'career@mobitel.lk', 'SLT-MOBITEL is the national telecommunications services provider in Sri Lanka and one of the country\'s largest companies with an annual turnover in excess of Rs 40 billion.', 'sltmobitel.png'),
-(3, 'Nawaloka (Pvt) Ltd', 'www.nawaloka.net', 'careers@nawaloka.net', 'Nawaloka Construction Company has undergone a long process on success in the local Construction Market with over 68 years rich and firsthand experience. Today the Company holds a predominant position in the Sri Lankan construction industry who has earned valued recognition in undertaking any challenging task in the field of CS2 category for High-rise Buildings , Highways and Heavy Construction.Nawaloka Construction Company is a wholly owned subsidiary of the Nawaloka Holdings.\r\nWith the expertise of the company team of professionals, ample resources and stable market position, Nawaloka Construction Company ensure that the Company is exposed to the latest construction techniques, products and materials and is thus able to apply them in the most practical, efficient and profitable manner to give the client the best value for money.', 'nawaloka.png'),
-(4, 'Hemas Holdings PLC', 'www.hemashealthcare.com', 'careers.healthcarephemas.com', 'Hemas Holdings PLC is a diversified corporate with focused interest in consumer, healthcare, and mobility. Hemas is a publicly listed company with over 5,400+ employees. In 1948, Hemas started with simple intent: to help families live healthfully.', 'hemas.png'),
-(5, 'Calcey Technologies', 'www.calcey.com', 'careers@calcey.com', 'Calcey Technologies (Pvt) Ltd. is an innovation firm specializing in a comprehensive range of online services including Web, Mobile & Cloud Solutions, Multimedia Services, Software Quality Assurance and Knowledge Services for SMEs to large enterprise level companies worldwide. As a boutique professional services firm, Calcey helps our customers to launch fully convergent products to market by leveraging creative and highly experienced terms in Silicon Valley, California and Colombo, Sri Lanka.', 'calcey.png'),
-(6, 'DFCC Bank', 'www.dfcc.lk', 'careers@dfcc.lk', 'DFCC Bank was set up in 1955 as Sri Lanka\'s a pioneer development finance institution on the recommendation of the World Bank and is one of the oldest development banks in Asia. In October 2015, DFCC Bank and its 99% owned subsidiary, DFCC Vardhana Bank amalgamated.', 'dfcc.png'),
-(7, 'Grand Engineering', 'www.grandengineering.Ik', 'grandengineering@gmail.com', 'The Grand Engineering business came to fruition from two industry professionals who identified an opportunity to enhance the design and construction experience to Developers, Builders and Owner Builders. Through over 30 years combined experience within the construction sector we have identified a critical need to ensure our clients are provided with an innovative solution within a committed time frame, ensuring that our team is working with you every step of the journey. We refer this as the “Grand Experience”.', 'grandeng.png');
+INSERT INTO `companies` (`company_id`, `company_username`, `company_password`, `company_name`, `company_website`, `company_email`, `company_description`, `company_logo`) VALUES
+(1, '', '', 'Unilever', 'www.unilever.com', 'unilever.career@gmail.com', 'Unilever plc is a British multinational consumer goods company with headquarters in London, England. Unilever products include food, condiments, ice cream, cleaning agents, beauty products, and personal care. Unilever is the largest producer of soap in the world and its products are available in around 190 countries.', 'unilever.png'),
+(2, '', '', 'Mobitel (Pvt) Ltd', 'www.sltmobitel.lk', 'career@mobitel.lk', 'SLT-MOBITEL is the national telecommunications services provider in Sri Lanka and one of the country\'s largest companies with an annual turnover in excess of Rs 40 billion.', 'sltmobitel.png'),
+(3, '', '', 'Nawaloka (Pvt) Ltd', 'www.nawaloka.net', 'careers@nawaloka.net', 'Nawaloka Construction Company has undergone a long process on success in the local Construction Market with over 68 years rich and firsthand experience. Today the Company holds a predominant position in the Sri Lankan construction industry who has earned valued recognition in undertaking any challenging task in the field of CS2 category for High-rise Buildings , Highways and Heavy Construction.Nawaloka Construction Company is a wholly owned subsidiary of the Nawaloka Holdings.\r\nWith the expertise of the company team of professionals, ample resources and stable market position, Nawaloka Construction Company ensure that the Company is exposed to the latest construction techniques, products and materials and is thus able to apply them in the most practical, efficient and profitable manner to give the client the best value for money.', 'nawaloka.png'),
+(4, '', '', 'Hemas Holdings PLC', 'www.hemashealthcare.com', 'careers.healthcarephemas.com', 'Hemas Holdings PLC is a diversified corporate with focused interest in consumer, healthcare, and mobility. Hemas is a publicly listed company with over 5,400+ employees. In 1948, Hemas started with simple intent: to help families live healthfully.', 'hemas.png'),
+(5, '', '', 'Calcey Technologies', 'www.calcey.com', 'careers@calcey.com', 'Calcey Technologies (Pvt) Ltd. is an innovation firm specializing in a comprehensive range of online services including Web, Mobile & Cloud Solutions, Multimedia Services, Software Quality Assurance and Knowledge Services for SMEs to large enterprise level companies worldwide. As a boutique professional services firm, Calcey helps our customers to launch fully convergent products to market by leveraging creative and highly experienced terms in Silicon Valley, California and Colombo, Sri Lanka.', 'calcey.png'),
+(6, '', '', 'DFCC Bank', 'www.dfcc.lk', 'careers@dfcc.lk', 'DFCC Bank was set up in 1955 as Sri Lanka\'s a pioneer development finance institution on the recommendation of the World Bank and is one of the oldest development banks in Asia. In October 2015, DFCC Bank and its 99% owned subsidiary, DFCC Vardhana Bank amalgamated.', 'dfcc.png'),
+(7, '', '', 'Grand Engineering', 'www.grandengineering.Ik', 'grandengineering@gmail.com', 'The Grand Engineering business came to fruition from two industry professionals who identified an opportunity to enhance the design and construction experience to Developers, Builders and Owner Builders. Through over 30 years combined experience within the construction sector we have identified a critical need to ensure our clients are provided with an innovative solution within a committed time frame, ensuring that our team is working with you every step of the journey. We refer this as the “Grand Experience”.', 'grandeng.png');
 
 -- --------------------------------------------------------
 

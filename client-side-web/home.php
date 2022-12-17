@@ -97,7 +97,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>SEARCH BY CATEGORY</span>
+                            <span>Jobs From Over 5800 Local and International Companies</span>
                             <h2>Browse Top Categories </h2>
                         </div>
                     </div>
@@ -220,9 +220,9 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <div class="cv-caption text-center">
-                            <p class="pera1">FEATURED TOURS Packages</p>
+                            <p class="pera1">Upload Your CV & Cover Letter</p>
                             <p class="pera2"> Make a Difference with Your Online Resume!</p>
-                            <a href="find_jobs.php" class="border-btn2 border-btn4">Find a Job & Upload your cv</a>
+                            <a href="find_jobs.php" class="border-btn2 border-btn4">Find a Job & Upload your CV & Cover Letter</a>
                         </div>
                     </div>
                 </div>
@@ -384,20 +384,17 @@
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
-                                <span>Recruit employees to your company</span>
-                                <h2>24k Talented people are getting Jobs</h2>
+                                <span>POST A JOB RIGHT NOW</span>
+                                <h2>24k talented people are getting Jobs from our website</h2>
                             </div>
 
                             <div class="support-caption">
                                 <p class="pera-top">
-                                    Mollit anim laborum duis au dolor in voluptate velit ess cillum
-                                    dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit
-                                    cillum.
+                                GET THE MOST EXPOSURE FOR YOUR JOBS
                                 </p>
                                 <p>
-                                    Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlore eu
-                                    quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt
-                                    mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.
+                                Get in front of the best and brightest job candidates with HireME's Job Postings.
+                                Quickly and easily make the right hire on best recruitment site in Sri Lanka.
                                 </p>
                                 <a href="post_job.php" class="btn post-btn">Post a job</a>
                             </div>
