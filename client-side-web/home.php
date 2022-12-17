@@ -237,8 +237,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>Recent Jobs</span>
-                            <h2>Featured Jobs</h2>
+                            <span>Find Recent Posted Jobs</span>
+                            <h2>Recent Jobs</h2>
                         </div>
                     </div>
                 </div>
@@ -278,7 +278,9 @@
                                             <div class="single-job-items mb-30">
                                                 <div class="job-items">
                                                     <div class="company-img">
-                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
+                                                        <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
+                                                        </a>
                                                     </div>
                                                     <div class="job-tittle">
                                                         <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
@@ -341,8 +343,10 @@
                             </div>
                             <div class="process-cap">
                                 <h5>1. Search a job</h5>
-                                <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
-                                    laborea.</p>
+                                <p>
+                                    Search your favorite job from using search bar or
+                                    find job page. You can also filter jobs according to your requirement.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -352,9 +356,11 @@
                                 <span class="flaticon-curriculum-vitae"></span>
                             </div>
                             <div class="process-cap">
-                                <h5>2. Apply for job</h5>
-                                <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
-                                    laborea.</p>
+                                <h5>2. Upload your CV, Cover Letter & Apply for Job</h5>
+                                <p>
+                                    After finding your wishing job go and apply for the job.
+                                    Make sure to give correct information and upload your CV and cover letter.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -365,8 +371,10 @@
                             </div>
                             <div class="process-cap">
                                 <h5>3. Get your job</h5>
-                                <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
-                                    laborea.</p>
+                                <p>
+                                    You will be informed or contact soon by from your applied
+                                    company. Good luck!
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -390,11 +398,11 @@
 
                             <div class="support-caption">
                                 <p class="pera-top">
-                                GET THE MOST EXPOSURE FOR YOUR JOBS
+                                    GET THE MOST EXPOSURE FOR YOUR JOBS
                                 </p>
                                 <p>
-                                Get in front of the best and brightest job candidates with HireME's Job Postings.
-                                Quickly and easily make the right hire on best recruitment site in Sri Lanka.
+                                    Get in front of the best and brightest job candidates with HireME's Job Postings.
+                                    Quickly and easily make the right hire on best recruitment site in Sri Lanka.
                                 </p>
                                 <a href="post_job.php" class="btn post-btn">Post a job</a>
                             </div>

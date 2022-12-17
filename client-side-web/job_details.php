@@ -26,7 +26,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    
+
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
 
     <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
@@ -42,7 +42,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
     <link rel="stylesheet" href="../client-side-web/css/footer.css">
-    
+
 </head>
 
 <body>
@@ -110,9 +110,9 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
                                         <div class="single-job-items mb-50">
                                             <div class="job-items">
                                                 <div class="company-img company-img-details">
-                                                    <a href="#"><img src="../client-side-web/assets/images/icon/job-list1.png" alt=""></a>
+                                                    <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
                                                 </div>
-                                                <div class="job-tittle">
+                                                <div class=" job-tittle">
                                                     <a href="#">
                                                         <h4><?php echo $record1['job_role'] ?></h4>
                                                     </a>

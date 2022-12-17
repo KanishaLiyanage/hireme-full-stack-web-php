@@ -73,120 +73,127 @@ if (isset($_POST['submit'])) {
         </div>
         <!-- Hero Area End -->
 
-        <div class="col-xl-9 col-lg-9 col-md-8 center">
-            <section class="featured-job-area">
-                <div class="container">
-                    <?php
-                    $result1 = mysqli_query($connection, $query);
-                    ?>
-                    <?php
 
-                    if ($result1) { ?>
+        <section class="featured-job-area filterContainer">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
 
                         <?php
+                        $result1 = mysqli_query($connection, $query);
+                        ?>
+                        <?php
 
-                        if (mysqli_num_rows($result1) > 0) { ?>
-
-                            <?php while ($record1 = mysqli_fetch_array($result1)) {
-
-                                $_GET['j_id'] = $record1['job_id'];
-                                $com_id = $record1['company_id'];
-                                $_GET['com_id'] = $record1['company_id'];
-
-                                $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
-                                $result2 = mysqli_query($connection, $query2);
-
-                                if ($result2) {
-
-                                    while ($record2 = mysqli_fetch_array($result2)) {
-
-                            ?>
-                                        <div class="single-job-items mb-30">
-                                            <div class="job-items">
-                                                <div class="company-img">
-                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
-                                                </div>
-                                                <div class="job-tittle">
-                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
-                                                        <h4><?php echo strtoupper($record1['job_role']) ?></h4>
-                                                    </a>
-                                                    <ul>
-                                                        <li><?php echo $record2['company_name'] ?></li>
-                                                        <li><i class="fas fa-map-marker-alt"></i><?php echo $record1['location'] ?></li>
-                                                        <li>$<?php echo $record1['salary'] ?></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="items-link f-right">
-                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><?php echo $record1['job_nature'] ?></a>
-                                                <span><?php echo $record1['posted_date'] ?></span>
-                                            </div>
-                                        </div>
-
-                                    <?php
-                                    }
-
-                                    ?>
+                        if ($result1) { ?>
 
                             <?php
 
-                                }
-                            } ?>
+                            if (mysqli_num_rows($result1) > 0) { ?>
 
-                        <?php } else {
-                        ?>
-                            <div class="filter-warning">
-                                <h1>Ooops... No any matches!</h1>
-                            </div>
-                    <?php
+                                <?php while ($record1 = mysqli_fetch_array($result1)) {
+
+                                    $_GET['j_id'] = $record1['job_id'];
+                                    $com_id = $record1['company_id'];
+                                    $_GET['com_id'] = $record1['company_id'];
+
+                                    $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
+                                    $result2 = mysqli_query($connection, $query2);
+
+                                    if ($result2) {
+
+                                        while ($record2 = mysqli_fetch_array($result2)) {
+
+                                ?>
+                                            <div class="single-job-items mb-30">
+                                                <div class="job-items">
+                                                    <div class="company-img">
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
+                                                            <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
+                                                        </a>
+                                                    </div>
+                                                    <div class="job-tittle">
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
+                                                            <h4><?php echo strtoupper($record1['job_role']) ?></h4>
+                                                        </a>
+                                                        <ul>
+                                                            <li><?php echo $record2['company_name'] ?></li>
+                                                            <li><i class="fas fa-map-marker-alt"></i><?php echo $record1['location'] ?></li>
+                                                            <li>$<?php echo $record1['salary'] ?></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="items-link f-right">
+                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><?php echo $record1['job_nature'] ?></a>
+                                                    <span><?php echo $record1['posted_date'] ?></span>
+                                                </div>
+                                            </div>
+
+                                        <?php
+                                        }
+
+                                        ?>
+
+                                <?php
+
+                                    }
+                                } ?>
+
+                            <?php } else {
+                            ?>
+                                <div class="filter-warning">
+                                    <h1>Ooops... No any matches!</h1>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            echo "DB failed!";
                         }
-                    } else {
-                        echo "DB failed!";
-                    }
 
-                    ?>
+                        ?>
+
+                    </div>
                 </div>
-            </section>
-        </div>
-    </main>
+            </div>
+        </section>
 
-    <?php require_once('../client-side-web/components/footer.php'); ?>
+        <?php require_once('../client-side-web/components/footer.php'); ?>
 
-    <!-- JS here -->
+        <!-- JS here -->
 
-    <!-- All JS Custom Plugins Link Here here -->
-    <script src="../client-side-web/components/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="../client-side-web/components/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../client-side-web/components/js/popper.min.js"></script>
-    <script src="../client-side-web/components/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="../client-side-web/components/js/jquery.slicknav.min.js"></script>
+        <!-- All JS Custom Plugins Link Here here -->
+        <script src="../client-side-web/components/js/vendor/modernizr-3.5.0.min.js"></script>
+        <!-- Jquery, Popper, Bootstrap -->
+        <script src="../client-side-web/components/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="../client-side-web/components/js/popper.min.js"></script>
+        <script src="../client-side-web/components/js/bootstrap.min.js"></script>
+        <!-- Jquery Mobile Menu -->
+        <script src="../client-side-web/components/js/jquery.slicknav.min.js"></script>
 
-    <!-- Jquery Slick , Owl-Carousel Range -->
-    <script src="../client-side-web/components/js/owl.carousel.min.js"></script>
-    <script src="../client-side-web/components/js/slick.min.js"></script>
-    <script src="../client-side-web/components/js/price_rangs.js"></script>
-    <!-- One Page, Animated-HeadLin -->
-    <script src="../client-side-web/components/js/wow.min.js"></script>
-    <script src="../client-side-web/components/js/animated.headline.js"></script>
-    <script src="../client-side-web/components/js/jquery.magnific-popup.js"></script>
+        <!-- Jquery Slick , Owl-Carousel Range -->
+        <script src="../client-side-web/components/js/owl.carousel.min.js"></script>
+        <script src="../client-side-web/components/js/slick.min.js"></script>
+        <script src="../client-side-web/components/js/price_rangs.js"></script>
+        <!-- One Page, Animated-HeadLin -->
+        <script src="../client-side-web/components/js/wow.min.js"></script>
+        <script src="../client-side-web/components/js/animated.headline.js"></script>
+        <script src="../client-side-web/components/js/jquery.magnific-popup.js"></script>
 
-    <!-- Scrollup, nice-select, sticky -->
-    <script src="../client-side-web/components/js/jquery.scrollUp.min.js"></script>
-    <script src="../client-side-web/components/js/jquery.nice-select.min.js"></script>
-    <script src="../client-side-web/components/js/jquery.sticky.js"></script>
+        <!-- Scrollup, nice-select, sticky -->
+        <script src="../client-side-web/components/js/jquery.scrollUp.min.js"></script>
+        <script src="../client-side-web/components/js/jquery.nice-select.min.js"></script>
+        <script src="../client-side-web/components/js/jquery.sticky.js"></script>
 
-    <!-- contact js -->
-    <script src="../client-side-web/components/js/contact.js"></script>
-    <script src="../client-side-web/components/js/jquery.form.js"></script>
-    <script src="../client-side-web/components/js/jquery.validate.min.js"></script>
-    <script src="../client-side-web/components/js/mail-script.js"></script>
-    <script src="../client-side-web/components/js/jquery.ajaxchimp.min.js"></script>
+        <!-- contact js -->
+        <script src="../client-side-web/components/js/contact.js"></script>
+        <script src="../client-side-web/components/js/jquery.form.js"></script>
+        <script src="../client-side-web/components/js/jquery.validate.min.js"></script>
+        <script src="../client-side-web/components/js/mail-script.js"></script>
+        <script src="../client-side-web/components/js/jquery.ajaxchimp.min.js"></script>
 
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="../client-side-web/components/js/plugins.js"></script>
-    <script src="../client-side-web/components/js/main.js"></script>
+        <!-- Jquery Plugins, main Jquery -->
+        <script src="../client-side-web/components/js/plugins.js"></script>
+        <script src="../client-side-web/components/js/main.js"></script>
 
 </body>
 

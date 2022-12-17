@@ -6,11 +6,11 @@
 $job_category = " ";
 
 if (!isset($_GET['job_cat'])) {
-    echo "Product ID not passed!";
+    // echo "Product ID not passed!";
     // header('Location: home.php');
 } else {
     $job_category = $_GET['job_cat'];
-    echo  $job_category;
+    // echo  $job_category;
 }
 
 ?>
@@ -223,7 +223,9 @@ if (!isset($_GET['job_cat'])) {
                                                     <div class="single-job-items mb-30">
                                                         <div class="job-items">
                                                             <div class="company-img">
-                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record1['company_id']; ?>"></a>
+                                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
+                                                                    <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
+                                                                </a>
                                                             </div>
                                                             <div class="job-tittle">
                                                                 <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">

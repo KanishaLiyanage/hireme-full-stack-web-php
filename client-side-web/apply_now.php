@@ -82,6 +82,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
                     </div>
 
                     <form action="../client-side-web/components/application.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
+
                         <div class="formbold-mb-5">
                             <label for="name" class="formbold-form-label"> Full Name </label>
                             <input type="text" name="full_name" id="name" placeholder="Full Name" class="formbold-form-input" />

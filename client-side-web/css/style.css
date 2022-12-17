@@ -7502,3 +7502,8 @@ form.search-box .search-form a {
     padding-top: 80px;
     padding-bottom: 80px
 }
+
+.companyLogo{
+    width: 85px;
+    height: 85px;
+}

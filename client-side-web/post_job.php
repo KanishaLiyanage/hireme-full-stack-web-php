@@ -90,12 +90,12 @@
 
                         <div class="formbold-mb-5">
                             <label for="role" class="formbold-form-label"> Job Role </label>
-                            <input type="text" name="job_role" id="job_role" placeholder="Enter the job role" class="formbold-form-input" required/>
+                            <input type="text" name="job_role" id="job_role" placeholder="Enter the job role" class="formbold-form-input" required />
                         </div>
 
                         <div class="formbold-mb-5">
                             <label for="salary" class="formbold-form-label"> Salary </label>
-                            <input type="text" name="salary" id="salary" placeholder="Enter the salary in Dollors" class="formbold-form-input" required/>
+                            <input type="text" name="salary" id="salary" placeholder="Enter the salary in Dollors" class="formbold-form-input" required />
                         </div>
 
                         <div class="formbold-mb-5">
@@ -139,7 +139,6 @@
                                 <option value="Full Time">Full Time</option>
                                 <option value="Part Time">Part Time</option>
                                 <option value="Remote">Remote</option>
-                                <option value="Freelance">Freelance</option>
                             </select>
                         </div>
 
@@ -165,8 +164,9 @@
                         </div>
 
                         <div>
-                            <input type="submit" value="Publish" class="formbold-btn">
+                            <input type="submit" value="Publish Vacancy" class="formbold-btn">
                         </div>
+
                     </form>
                 </div>
             </div>
