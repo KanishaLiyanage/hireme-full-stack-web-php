@@ -21,13 +21,13 @@ if (!isset($_GET['job_cat'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> <?php echo  $job_category ?> </title>
+    <title> HireME | <?php echo  $job_category ?> </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
+
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
 
-    <!-- CSS here -->
     <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
     <link rel="stylesheet" href="../client-side-web/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../client-side-web/css/price_rangs.css">

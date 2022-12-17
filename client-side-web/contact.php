@@ -6,12 +6,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Contact Us</title>
+        <title>HireME | Contact Us</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
 
-        <!-- CSS here -->
         <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
         <link rel="stylesheet" href="../client-side-web/css/owl.carousel.min.css">
         <link rel="stylesheet" href="../client-side-web/css/slicknav.css">

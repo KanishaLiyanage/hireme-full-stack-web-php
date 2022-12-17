@@ -18,12 +18,11 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply Now</title>
-
+    <title>HireME | Apply Now</title>
     <link rel="manifest" href="site.webmanifest">
+
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
 
-    <!-- CSS here -->
     <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
     <link rel="stylesheet" href="../client-side-web/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../client-side-web/css/flaticon.css">

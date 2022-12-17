@@ -4,7 +4,7 @@
             <div class="footer-border">
                 <div class="footer-copy-right">
                     <p class="bottom-text">
-                        HireMe | Copyright &copy;
+                        HireME | Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
                         </script> All rights reserved
