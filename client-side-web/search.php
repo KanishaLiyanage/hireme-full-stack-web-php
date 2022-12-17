@@ -142,7 +142,7 @@ if (isset($_POST['submit'])) {
                             <?php } else {
                             ?>
                                 <div class="filter-warning">
-                                    <h1>Ooops... No any matches!</h1>
+                                    <h1>Ooops... No Any Matches Found!</h1>
                                 </div>
                         <?php
                             }

@@ -155,7 +155,9 @@ if (isset($_POST['submit'])) {
                                             <div class="single-job-items mb-30">
                                                 <div class="job-items">
                                                     <div class="company-img">
-                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
+                                                        <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
+                                                            <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
+                                                        </a>
                                                     </div>
                                                     <div class="job-tittle">
                                                         <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
