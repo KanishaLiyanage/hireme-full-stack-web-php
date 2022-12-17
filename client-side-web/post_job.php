@@ -69,7 +69,7 @@
             <div class="formbold-main-wrapper">
                 <div class="formbold-form-wrapper">
 
-                    <form action="../client-side-web/components/publish.php" method="POST">
+                    <form action="../client-side-web/components/job_post_successful.php" method="POST">
 
                         <div class="formbold-mb-5">
                             <label for="category" class="formbold-form-label"> Choose Job Category </label>
@@ -164,7 +164,7 @@
                         </div>
 
                         <div>
-                            <input type="submit" value="Publish Vacancy" class="formbold-btn">
+                            <input type="submit" name="submit" value="Publish Vacancy" class="formbold-btn">
                         </div>
 
                     </form>

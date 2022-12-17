@@ -1,79 +1,3 @@
-<?php session_start(); ?>
-<?php require_once('../connection/dbconnection.php'); ?>
-
-<?php
-
-if (isset($_POST['submit'])) {
-
-    $cat = mysqli_real_escape_string($connection, $_POST['job_category']);
-    $j_loc = mysqli_real_escape_string($connection, $_POST['job_location']);
-    $sal = mysqli_real_escape_string($connection, $_POST['salary']);
-    $sal2 = "";
-
-    if ($sal == 1) {
-        $sal = 1000;
-        $sal2 = 2000;
-    } elseif ($sal == 2) {
-        $sal = 2000;
-        $sal2 = 3000;
-    } elseif ($sal == 3) {
-        $sal = 3000;
-        $sal2 = 4000;
-    } elseif ($sal == 4) {
-        $sal = 4000;
-        $sal2 = 5000;
-    } elseif ($sal == 5) {
-        $sal = 5000;
-    }
-
-    if ($cat == "All Category" && $j_loc == "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs";
-    } elseif ($cat != "All Category" && $j_loc == "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'";
-    } elseif ($cat == "All Category" && $j_loc != "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            location = '{$j_loc}'";
-    } elseif ($cat == "All Category" && $j_loc == "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } elseif ($cat != "All Category" && $j_loc != "Anywhere" && $sal == "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            location = '{$j_loc}'";
-    } elseif ($cat == "All Category" && $j_loc != "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            location = '{$j_loc}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } elseif ($cat != "All Category" && $j_loc == "Anywhere" && $sal != "Any") {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    } else {
-        $query = "SELECT * FROM jobs
-            WHERE
-            category = '{$cat}'
-            AND
-            location = '{$j_loc}'
-            AND
-            salary >= '{$sal}' AND salary < '{$sal2}'";
-    }
-} else {
-
-    header('Location: index.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,14 +5,15 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HireME | Filtered List</title>
+    <link rel="manifest" href="site.webmanifest">
+    <title>HireME | Successful</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon/favicon.ico">
 
     <link rel="stylesheet" href="../client-side-web/css/bootstrap.min.css">
     <link rel="stylesheet" href="../client-side-web/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../client-side-web/css/price_rangs.css">
     <link rel="stylesheet" href="../client-side-web/css/flaticon.css">
+    <link rel="stylesheet" href="../client-side-web/css/price_rangs.css">
     <link rel="stylesheet" href="../client-side-web/css/slicknav.css">
     <link rel="stylesheet" href="../client-side-web/css/animate.min.css">
     <link rel="stylesheet" href="../client-side-web/css/magnific-popup.css">
@@ -98,109 +23,31 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
     <link rel="stylesheet" href="../client-side-web/css/footer.css">
+    <link rel="stylesheet" href="../client-side-web/css/form.css">
+    <link rel="stylesheet" href="../client-side-web/css/successful_message.css">
 
 </head>
 
 <body>
-
-    <?php require_once('../client-side-web/components/header.php'); ?>
-
-    <main>
-        <!-- Hero Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="../client-side-web/assets/images/hero/about.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Filter Results</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="popup" id="popup">
+            <img src="../../assets/images/tick.png">
+            <h2>Submission Successful!</h2>
+            <p>you will be contact by the company soon.</p>
+            <a href="../home.php"><button type="button">ok</button></a>
         </div>
-        <!-- Hero Area End -->
+    </div>
+    <script>
+        let popup = document.getElementById("popup");
 
-        <div class="col-xl-9 col-lg-9 col-md-8 center">
-            <section class="featured-job-area">
-                <div class="container">
-                    <?php
-                    $result1 = mysqli_query($connection, $query);
-                    ?>
-                    <?php
+        function openPopup() {
+            popup.classList.add("open-popup")
+        }
 
-                    if ($result1) { ?>
-
-                        <?php
-
-                        if (mysqli_num_rows($result1) > 0) { ?>
-
-                            <?php while ($record1 = mysqli_fetch_array($result1)) {
-
-                                $_GET['j_id'] = $record1['job_id'];
-                                $com_id = $record1['company_id'];
-                                $_GET['com_id'] = $record1['company_id'];
-
-                                $query2 = "SELECT * FROM companies WHERE company_id = '{$com_id}' LIMIT 1";
-                                $result2 = mysqli_query($connection, $query2);
-
-                                if ($result2) {
-
-                                    while ($record2 = mysqli_fetch_array($result2)) {
-
-                            ?>
-                                        <div class="single-job-items mb-30">
-                                            <div class="job-items">
-                                                <div class="company-img">
-                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><img src="../client-side-web/assets/images/icon/job-list1.png" alt="<?php echo $record2['company_name']; ?>"></a>
-                                                </div>
-                                                <div class="job-tittle">
-                                                    <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
-                                                        <h4><?php echo strtoupper($record1['job_role']) ?></h4>
-                                                    </a>
-                                                    <ul>
-                                                        <li><?php echo $record2['company_name'] ?></li>
-                                                        <li><i class="fas fa-map-marker-alt"></i><?php echo $record1['location'] ?></li>
-                                                        <li>$<?php echo $record1['salary'] ?></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="items-link f-right">
-                                                <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>"><?php echo $record1['job_nature'] ?></a>
-                                                <span><?php echo $record1['posted_date'] ?></span>
-                                            </div>
-                                        </div>
-
-                                    <?php
-                                    }
-
-                                    ?>
-
-                            <?php
-
-                                }
-                            } ?>
-
-                        <?php } else {
-                        ?>
-                            <div class="filter-warning">
-                                <h1>Ooops... No any matches!</h1>
-                            </div>
-                    <?php
-                        }
-                    } else {
-                        echo "DB failed!";
-                    }
-
-                    ?>
-                </div>
-            </section>
-        </div>
-
-    </main>
-
-    <?php require_once('../client-side-web/components/footer.php'); ?>
+        function closePopup() {
+            popup.classList.remove("open-popup")
+        }
+    </script>
 
     <!-- JS here -->
 
@@ -213,10 +60,11 @@ if (isset($_POST['submit'])) {
     <!-- Jquery Mobile Menu -->
     <script src="../client-side-web/components/js/jquery.slicknav.min.js"></script>
 
-    <!-- Jquery Slick , Owl-Carousel Range -->
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="../client-side-web/components/js/owl.carousel.min.js"></script>
     <script src="../client-side-web/components/js/slick.min.js"></script>
     <script src="../client-side-web/components/js/price_rangs.js"></script>
+
     <!-- One Page, Animated-HeadLin -->
     <script src="../client-side-web/components/js/wow.min.js"></script>
     <script src="../client-side-web/components/js/animated.headline.js"></script>
@@ -241,5 +89,3 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
-
-<?php mysqli_close($connection); ?>

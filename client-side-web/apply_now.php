@@ -81,7 +81,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
                     <div class="formbold-mb-5 formbold-pt-3">
                     </div>
 
-                    <form action="../client-side-web/components/application.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
+                    <form action="../client-side-web/components/application_successful.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
 
                         <div class="formbold-mb-5">
                             <label for="name" class="formbold-form-label"> Full Name </label>
@@ -113,7 +113,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
                         </div>
 
                         <div>
-                            <input type="submit" value="Apply" class="formbold-btn">
+                            <input type="submit" name="submit" value="Apply for job" class="formbold-btn">
                         </div>
 
                     </form>
