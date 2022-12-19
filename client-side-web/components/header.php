@@ -24,6 +24,7 @@
                                         <li><a href="applicant_profile.php">Applicant Profile</a></li>
                                         <li><a href="company_profile.php">Company Profile</a></li>
                                         <li><a href="contact.php">Contact</a></li>
+                                        <li><a href="./login and register/logout.php">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>

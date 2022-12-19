@@ -2,6 +2,16 @@
 <?php require_once('../connection/dbconnection.php'); ?>
 
 <?php
+
+if (!isset($_SESSION['applicant_id'])) {
+    header("Location: ../client-side-web/login and register/applicant_login.php");
+} else {
+    $applicant_id = $_SESSION['applicant_id'];
+}
+
+?>
+
+<?php
 if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
     $com_id = $_GET['company_id'];
     $j_id = $_GET['job_id'];

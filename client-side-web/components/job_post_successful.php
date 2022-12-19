@@ -3,9 +3,17 @@
 
 <?php
 
-if (isset($_POST['submit'])) {
+if (!isset($_SESSION['company_id'])) {
+    header("Location: ../login and register/company_login.php");
+} else {
+    $company_id = $_SESSION['company_id'];
+}
 
-    $com_id = 1;
+?>
+
+<?php
+
+if (isset($_POST['submit'])) {
 
     $cat = mysqli_real_escape_string($connection, $_POST['job_category']);
     $j_role = mysqli_real_escape_string($connection, $_POST['job_role']);
@@ -20,7 +28,7 @@ if (isset($_POST['submit'])) {
     $app_deadline = mysqli_real_escape_string($connection, $_POST['deadline']);
 
     $query = "INSERT INTO jobs(company_id, category, job_role, salary, salary_type, location, description, vacancies, job_nature, requirement_skills, education_and_experience, deadline)
-              VALUES ('{$com_id}', '{$cat}', '{$j_role}','{$sal}', '{$sal_type}', '{$j_loc}','{$desc}','{$vac}','{$j_nat}','{$req_skills}','{$ed_exp}','{$app_deadline}')";
+              VALUES ('{$company_id}', '{$cat}', '{$j_role}','{$sal}', '{$sal_type}', '{$j_loc}','{$desc}','{$vac}','{$j_nat}','{$req_skills}','{$ed_exp}','{$app_deadline}')";
 
     $result = mysqli_query($connection, $query);
 

@@ -3,7 +3,15 @@
 
 <?php
 
-$applicant_id = 1;
+if (!isset($_SESSION['applicant_id'])) {
+    header("Location: ../client-side-web/login and register/applicant_login.php");
+} else {
+    $applicant_id = $_SESSION['applicant_id'];
+}
+
+?>
+
+<?php
 
 $query = "SELECT * FROM applicants
           WHERE

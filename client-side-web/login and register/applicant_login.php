@@ -7,21 +7,18 @@ if (isset($_POST["login"])) {
     $applicant_password = $_POST["applicant_password"];
 
     $query = "SELECT * FROM applicants
-                      WHERE applicant_username = '$applicant_username'";
+              WHERE applicant_username = '$applicant_username'";
 
     $result = mysqli_query($connection, $query);
-    $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    if ($user) {
-        if (password_verify($applicant_password, $user["applicant_password"])) {
-            $_SESSION["user"] = "yes";
+    if ($result) {
+        if (mysqli_num_rows($result) == 1) {
+            $applicant = mysqli_fetch_assoc($result);
+            $_SESSION['applicant_id'] = $applicant['applicant_id'];
             header("Location: ../home.php");
-            die();
-        } else {
-            echo "<div class='alert alert-danger'>Password does not match!</div>";
         }
     } else {
-        echo "<div class='alert alert-danger'>Username does not match!</div>";
+        echo "Login Failed!";
     }
 }
 ?>
@@ -34,7 +31,7 @@ if (isset($_POST["login"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HireME | Login as Applicant</title>
-    
+
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon/favicon.ico">
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">

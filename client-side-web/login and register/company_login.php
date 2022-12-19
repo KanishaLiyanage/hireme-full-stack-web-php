@@ -11,18 +11,15 @@ if (isset($_POST["login"])) {
               WHERE company_username = '$company_username'";
 
     $result = mysqli_query($connection, $query);
-    $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    if ($user) {
-        if (password_verify($company_password, $user["company_password"])) {
-            $_SESSION["user"] = "yes";
+    if ($result) {
+        if (mysqli_num_rows($result) == 1) {
+            $company = mysqli_fetch_assoc($result);
+            $_SESSION['company_id'] = $company['company_id'];
             header("Location: ../home.php");
-            die();
-        } else {
-            echo "<div class='alert alert-danger'>applicant password does not match</div>";
         }
     } else {
-        echo "<div class='alert alert-danger'>Email does not match</div>";
+        echo "Login Failed!";
     }
 }
 ?>
@@ -130,3 +127,5 @@ if (isset($_POST["login"])) {
 </body>
 
 </html>
+
+<?php mysqli_close($connection); ?>

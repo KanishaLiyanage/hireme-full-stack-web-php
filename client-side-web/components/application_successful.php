@@ -3,9 +3,18 @@
 
 <?php
 
+if (!isset($_SESSION['applicant_id'])) {
+    header("Location: ../client-side-web/login and register/applicant_login.php");
+} else {
+    $applicant_id = $_SESSION['applicant_id'];
+}
+
+?>
+
+<?php
+
 if (isset($_POST['submit']) && isset($_GET['job_id']) && isset($_GET['company_id']) && isset($_FILES['cv']) && isset($_FILES['cover_letter'])) {
 
-    $applicant_id = 1;
     $j_id = $_GET['job_id'];
     $com_id = $_GET['company_id'];
     $full_name = mysqli_real_escape_string($connection, $_POST['full_name']);

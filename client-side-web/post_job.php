@@ -1,9 +1,18 @@
 <?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
+<?php
+
+if (!isset($_SESSION['company_id'])) {
+    header("Location: ../client-side-web/login and register/company_login.php");
+} else {
+    $company_id = $_SESSION['company_id'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
