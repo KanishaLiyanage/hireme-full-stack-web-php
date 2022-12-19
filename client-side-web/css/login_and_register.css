@@ -12,3 +12,33 @@ body {
 .form-group {
     margin-bottom: 30px;
 }
+
+.loginBtn{
+    background-color: #00B074;
+    border-color: #00B074;
+}
+
+.loginBtn:hover{
+    background-color: #00B074;
+    border-color: #00B074;
+}
+
+.loginText{
+    color: #00B074;
+}
+
+.loginText:hover{
+    color: #00B074;
+}
+
+.logoAlignment{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textAlignment{
+    text-align: center;
+    margin-top: 1em;
+    font-weight: bold;
+}

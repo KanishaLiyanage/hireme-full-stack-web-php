@@ -3,11 +3,17 @@
 
 <?php
 
-$applicant_id = 1;
+if (!isset($_SESSION['applicant_id'])) {
+    header("Location: ../client-side-web/login and register/applicant_login.php");
+} else {
+    $applicant_id = $_SESSION['applicant_id'];
+}
 
 ?>
 
 <?php
+
+$applications_list = " ";
 
 $query = "SELECT
           applications.*,
@@ -24,6 +30,33 @@ $query = "SELECT
           ORDER BY
           applications.application_id
           DESC";
+
+$result = mysqli_query($connection, $query);
+
+
+if ($result) {
+
+    if (mysqli_num_rows($result) > 0) {
+
+        while ($record = mysqli_fetch_array($result)) {
+
+            $applications_list .= "<tbody>";
+            $applications_list .= "<tr>";
+            $applications_list .= "<td class=\"text-left\"> {$record['application_id']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['company_name']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['category']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['job_role']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['company_email']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['location']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['posted_date']} </td>";
+            $applications_list .= "<td class=\"text-left\"> {$record['deadline']} </td>";
+            $applications_list .= "<td class=\"text-left\"> <a href=\"../client-side-web/components/cancel_application.php?application_id={$record['application_id']}\" onclick = \"return confirm('Are you sure to want cancel the application?');\"> <button class=\"cancelBtn\">Cancel</button> </a> </td>";
+            $applications_list .= "</tr>";
+            $applications_list .= "</tbody>";
+
+        }
+    }
+}
 
 ?>
 
@@ -51,6 +84,7 @@ $query = "SELECT
     <link rel="stylesheet" href="../client-side-web/css/nice-select.css">
     <link rel="stylesheet" href="../client-side-web/css/style.css">
     <link rel="stylesheet" href="../client-side-web/css/footer.css">
+    <link rel="stylesheet" href="../client-side-web/css/tables.css">
 
 </head>
 
@@ -76,102 +110,27 @@ $query = "SELECT
 
         <section class="featured-job-area filterContainer">
 
-            <div class="container">
+            <div class="tableContainer">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
 
-                        <div class="table-box">
-                            <div class="table-row table-head">
-                                <div class="table-cell first-cell">
-                                    <p>Application ID</p>
-                                </div>
-                                <div class="table-cell second-cell">
-                                    <p>Company Name</p>
-                                </div>
-                                <div class="table-cell third-cell">
-                                    <p>Job Category</p>
-                                </div>
-                                <div class="table-cell fourth-cell">
-                                    <p>Applied Job Role</p>
-                                </div>
-                                <div class="table-cell fourth-cell">
-                                    <p>Company Email</p>
-                                </div>
-                                <div class="table-cell fourth-cell">
-                                    <p>Location</p>
-                                </div>
-                                <div class="table-cell fourth-cell">
-                                    <p>Job Posted Date</p>
-                                </div>
-                                <div class="table-cell fourth-cell">
-                                    <p>Deadline</p>
-                                </div>
-                                <div class="table-cell fourth-cell">
-                                    <p>Options</p>
-                                </div>
-                            </div>
+                        <table id="customers">
+                            <tr>
+                                <th>Application ID</th>
+                                <th>Company Name</th>
+                                <th>Job Category</th>
+                                <th>Applied Job Role</th>
+                                <th>Company Email</th>
+                                <th>Location</th>
+                                <th>Job Posted Date</th>
+                                <th>Deadline</th>
+                                <th>Options</th>
+                            </tr>
+                            <tr>
+                                <?php echo $applications_list ?>
+                            </tr>
+                        </table>
 
-                            <?php
-                            $result = mysqli_query($connection, $query);
-
-
-                            if ($result) {
-
-                                if (mysqli_num_rows($result) > 0) {
-
-                                    while ($record = mysqli_fetch_array($result)) {
-                            ?>
-
-                                        <div class="table-row">
-                                            <div class="table-cell first-cell">
-                                                <p><?php echo $record['application_id'] ?></p>
-                                            </div>
-                                            <div class="table-cell">
-                                                <p><?php echo $record['company_name'] ?></p>
-                                            </div>
-                                            <div class="table-cell last-cell">
-                                                <p><?php echo $record['category'] ?></p>
-                                            </div>
-                                            <div class="table-cell fourth-cell">
-                                                <p><?php echo $record['job_role'] ?></p>
-                                            </div>
-                                            <div class="table-cell fourth-cell">
-                                                <p><?php echo $record['company_email'] ?></p>
-                                            </div>
-                                            <div class="table-cell fourth-cell">
-                                                <p><?php echo $record['location'] ?></p>
-                                            </div>
-                                            <div class="table-cell fourth-cell">
-                                                <p><?php echo $record['posted_date'] ?></p>
-                                            </div>
-                                            <div class="table-cell fourth-cell">
-                                                <p><?php echo $record['deadline'] ?></p>
-                                            </div>
-                                            <div class="table-cell fourth-cell">
-                                                <a href="../client-side-web/components/cancel_application.php?application_id=<?= $record['application_id'] ?>" onclick="return confirm('Are you sure to want cancel the application?');">
-                                                    <button type="button" class="filter-form">Cancel Application</button>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    <?php
-                                    }
-
-                                    ?>
-
-                                <?php } else {
-                                ?>
-                                    <div class="filter-warning">
-                                        <h1>There is no applicants here</h1>
-                                    </div>
-                            <?php
-                                }
-                            } else {
-                                echo "DB failed!";
-                            }
-
-                            ?>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -42,6 +42,12 @@
         </div>
     </div>
 
+    <div>
+        <img class="logoAlignment" src="../../assets/logo/logo.png">
+    </div>
+
+    <h1 class="textAlignment">Register as an Applicant</h1>
+
     <div class="container">
 
         <?php
@@ -160,14 +166,14 @@
                 <input type="file" class="form-control" name="image">
             </div>
             <div class="form-btn">
-                <input type="submit" class="btn btn-primary" value="Register" name="submit">
+                <input type="submit" class="btn btn-primary loginBtn" value="Register" name="submit">
             </div>
         </form>
 
         <div>
             <br>
             <div>
-                <p>Already Registered? <a href="applicant_login.php">Login Here</a></p>
+                <p>Already Registered? <a href="applicant_login.php" class="loginText">Login Here</a></p>
             </div>
         </div>
 

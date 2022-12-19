@@ -117,6 +117,7 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/login_and_register.css">
+    
 </head>
 
 <body>
@@ -131,6 +132,12 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
             </div>
         </div>
     </div>
+
+    <div>
+        <img class="logoAlignment" src="../../assets/logo/logo.png">
+    </div>
+
+    <h1 class="textAlignment">Register as a Company</h1>
 
     <div class="container">
 
@@ -168,14 +175,14 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
                 <input type="file" class="form-control" name="image">
             </div>
             <div class="form-btn">
-                <input type="submit" class="btn btn-primary" value="Register" name="submit">
+                <input type="submit" class="btn btn-primary loginBtn" value="Register" name="submit">
             </div>
         </form>
 
         <div>
             <br>
             <div>
-                <p>Already Registered <a href="company_login.php">Login Here</a></p>
+                <p>Already Registered <a href="company_login.php" class="loginText">Login Here</a></p>
             </div>
         </div>
 

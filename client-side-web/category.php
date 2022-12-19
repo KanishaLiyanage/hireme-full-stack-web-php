@@ -184,15 +184,7 @@ if (!isset($_GET['job_cat'])) {
                                         <div class="count-job mb-35">
                                             <span><?php echo mysqli_num_rows($result1) ?> Jobs found</span>
                                             <!-- Select job items start -->
-                                            <div class="select-job-items">
-                                                <span>Sort by</span>
-                                                <select name="select">
-                                                    <option value="">None</option>
-                                                    <option value="">job list</option>
-                                                    <option value="">job list</option>
-                                                    <option value="">job list</option>
-                                                </select>
-                                            </div>
+                                            
                                             <!--  Select job items End-->
                                         </div>
                                     </div>

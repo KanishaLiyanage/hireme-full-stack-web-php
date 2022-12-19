@@ -64,6 +64,12 @@ if (isset($_POST["login"])) {
         </div>
     </div>
 
+    <div>
+        <img class="logoAlignment" src="../../assets/logo/logo.png">
+    </div>
+
+    <h1 class="textAlignment">Login as an Applicant</h1>
+
     <div class="container">
 
         <form action="applicant_login.php" method="post">
@@ -76,13 +82,13 @@ if (isset($_POST["login"])) {
                 <input type="password" placeholder="Enter password" name="applicant_password" class="form-control">
             </div>
             <div class="form-btn">
-                <input type="submit" value="Login" name="login" class="btn btn-primary">
+                <input type="submit" value="Login" name="login" class="btn btn-primary loginBtn">
             </div>
         </form>
 
         <div>
             <br>
-            <p>Not registered yet?<a href="applicant_register.php"> Register Here</a></p>
+            <p>Not registered yet?<a href="applicant_register.php" class="loginText"> Register Here</a></p>
         </div>
 
     </div>

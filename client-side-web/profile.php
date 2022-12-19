@@ -346,7 +346,7 @@ if (isset($_SESSION['applicant_id'])) {
                                 <div class="col-md-4">
                                     <div class="profile-work">
                                         <p>SEE WHO ARE THE APPLICANTS</p>
-                                        <a href="./company_applications.php">
+                                        <a href="./company_applicants.php">
                                             <button class="profile-edit-btn">Go to my applicants</button>
                                         </a>
                                         <!-- <p>WORK LINK</p>
