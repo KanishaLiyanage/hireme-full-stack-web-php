@@ -5,7 +5,7 @@
 
 if (isset($_POST['submit']) && isset($_GET['job_id']) && isset($_GET['company_id']) && isset($_FILES['cv']) && isset($_FILES['cover_letter'])) {
 
-    $applicant_id = 2;
+    $applicant_id = 1;
     $j_id = $_GET['job_id'];
     $com_id = $_GET['company_id'];
     $full_name = mysqli_real_escape_string($connection, $_POST['full_name']);
@@ -43,7 +43,7 @@ if (isset($_POST['submit']) && isset($_GET['job_id']) && isset($_GET['company_id
             $cover_letter_upload_path = '../../assets/uploads/applications/cover-letters/' . $new_cover_letter_name;
             move_uploaded_file($cover_letter_tmp_name, $cover_letter_upload_path);
 
-            $query = "INSERT INTO applications(applicant_id, job_id, company_id, applicant_full_name, applicant_mobile_number, applicant_email, applicant_cv, applicant_cover_letter)
+            $query = "INSERT INTO applications(applicant_id, job_id, company_id, applicant_full_name, applicant_mobile_number, applicant_contact_email, applicant_cv, applicant_cover_letter)
                       VALUES ('{$applicant_id}', '{$j_id}', '{$com_id}', '{$full_name}', '{$mobile_no}', '{$email}', '{$new_cv_name}', '{$new_cover_letter_name}')";
 
             $result = mysqli_query($connection, $query);

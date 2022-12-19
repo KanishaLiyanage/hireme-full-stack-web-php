@@ -1,6 +1,66 @@
 <?php session_start(); ?>
 <?php require_once('../connection/dbconnection.php'); ?>
 
+<?php
+
+$companyCountQuery = "SELECT * FROM companies";
+$companyCountResult = mysqli_query($connection, $companyCountQuery);
+$companyCount = mysqli_num_rows($companyCountResult);
+
+$applicationsCountQuery = "SELECT * FROM applications";
+$applicationsCountResult = mysqli_query($connection, $applicationsCountQuery);
+$applicationsCount = mysqli_num_rows($applicationsCountResult);
+
+$salesAndMarketingCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Sales and Marketing'";
+$salesAndMarketingCountResult = mysqli_query($connection, $salesAndMarketingCountQuery);
+$salesAndMarketingCount = mysqli_num_rows($salesAndMarketingCountResult);
+
+$biCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Banking and Insurance'";
+$biCountResult = mysqli_query($connection, $biCountQuery);
+$biCount = mysqli_num_rows($biCountResult);
+
+$uiuxCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'UI/UX Design'";
+$uiuxCountResult = mysqli_query($connection, $uiuxCountQuery);
+$uiuxCount = mysqli_num_rows($uiuxCountResult);
+
+$telCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Telecommunication'";
+$telCountResult = mysqli_query($connection, $telCountQuery);
+$telCount = mysqli_num_rows($telCountResult);
+
+$conCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Construction'";
+$conCountResult = mysqli_query($connection, $conCountQuery);
+$conCount = mysqli_num_rows($conCountResult);
+
+$itCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Information Technology'";
+$itCountResult = mysqli_query($connection, $itCountQuery);
+$itCount = mysqli_num_rows($itCountResult);
+
+$archCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Architecture'";
+$archCountResult = mysqli_query($connection, $archCountQuery);
+$archCount = mysqli_num_rows($archCountResult);
+
+$accCountQuery = "SELECT * FROM jobs
+                                WHERE
+                                category = 'Accounting and Auditing'";
+$accCountResult = mysqli_query($connection, $accCountQuery);
+$accCount = mysqli_num_rows($accCountResult);
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -97,7 +157,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>Jobs From Over 5800 Local and International Companies</span>
+                            <span>Jobs From Over <?php echo $companyCount ?> Local and International Companies</span>
                             <h2>Browse Top Categories </h2>
                         </div>
                     </div>
@@ -111,7 +171,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Banking and Insurance</h5>
-                                    <span>(653)</span>
+                                    <span>(<?php echo $biCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -123,7 +183,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>UI/UX Design</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $uiuxCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -135,7 +195,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Sales and Marketing</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $salesAndMarketingCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -147,7 +207,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Telecommunication</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $telCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -159,7 +219,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Construction</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $conCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -171,7 +231,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Information Technology</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $itCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -183,7 +243,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Architecture</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $archCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -195,7 +255,7 @@
                                 </div>
                                 <div class="services-cap">
                                     <h5>Accounting and Auditing</h5>
-                                    <span>(658)</span>
+                                    <span>(<?php echo $accCount ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -279,7 +339,7 @@
                                                 <div class="job-items">
                                                     <div class="company-img">
                                                         <a href="job_details.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>">
-                                                        <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
+                                                            <img class="companyLogo" src="../assets/uploads/companies/company-logo/<?php echo $record2['company_logo'] ?>" alt="<?php echo $record2['company_logo']; ?>">
                                                         </a>
                                                     </div>
                                                     <div class="job-tittle">
@@ -393,7 +453,7 @@
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
                                 <span>POST A JOB RIGHT NOW</span>
-                                <h2>24k talented people are getting Jobs from our website</h2>
+                                <h2> <?php echo $applicationsCount ?> people got Jobs from our website</h2>
                             </div>
 
                             <div class="support-caption">

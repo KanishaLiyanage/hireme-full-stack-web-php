@@ -7,6 +7,24 @@ $company_id = 1;
 
 ?>
 
+<?php
+
+$query = "SELECT
+      applications.*,
+      jobs.*,
+      applicants.*
+      FROM
+      applications
+      INNER JOIN jobs ON applications.job_id = jobs.job_id
+      INNER JOIN applicants ON applications.applicant_id = applicants.applicant_id
+      WHERE
+      applications.company_id = '{$company_id}'
+      AND
+      applications.application_recycle_bin = 0
+      ORDER BY
+      applications.application_id DESC";
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,81 +73,96 @@ $company_id = 1;
         </div>
         <!-- Hero Area End -->
 
-
         <section class="featured-job-area filterContainer">
 
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
 
-                        <?php
-
-                        $query = "SELECT
-                                  applications.*,
-                                  jobs.*,
-                                  applicants.*
-                                  FROM
-                                  applications
-                                  INNER JOIN jobs ON applications.job_id = jobs.job_id
-                                  INNER JOIN applicants ON applications.applicant_id = applicants.applicant_id
-                                  WHERE
-                                  applications.company_id = '{$company_id}'
-                                  ORDER BY
-                                  applications.application_id DESC";
-
-                        $result = mysqli_query($connection, $query);
-
-                        ?>
-
-                        <?php
-
-                        if ($result) { ?>
+                        <div class="table-box">
+                            <div class="table-row table-head">
+                                <div class="table-cell first-cell">
+                                    <p>Application ID</p>
+                                </div>
+                                <div class="table-cell second-cell">
+                                    <p>Applicant's ID</p>
+                                </div>
+                                <div class="table-cell third-cell">
+                                    <p>Applicant's Full Name</p>
+                                </div>
+                                <div class="table-cell fourth-cell">
+                                    <p>Applied Job</p>
+                                </div>
+                                <div class="table-cell fourth-cell">
+                                    <p>Applicant's Email</p>
+                                </div>
+                                <div class="table-cell fourth-cell">
+                                    <p>Applicant's Mobile Number</p>
+                                </div>
+                                <div class="table-cell fourth-cell">
+                                    <p>Applicant's CV</p>
+                                </div>
+                                <div class="table-cell fourth-cell">
+                                    <p>Applicant's Cover Letter</p>
+                                </div>
+                            </div>
 
                             <?php
+                            $result = mysqli_query($connection, $query);
 
-                            if (mysqli_num_rows($result) > 0) { ?>
 
-                                <?php while ($record = mysqli_fetch_array($result)) {
+                            if ($result) {
 
-                                ?>
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <img class="companyLogo" src="../assets/uploads/companies/company-logo/calcey.png">
-                                            </div>
-                                            <div class="job-tittle">
-                                                <h4><?php echo strtoupper($record['job_role']) ?></h4>
-                                                <ul>
-                                                    <li><?php echo $record['applicant_first_name'] ?></li>
-                                                    <li><i class="fas fa-map-marker-alt"></i><?php echo $record['location'] ?></li>
-                                                    <li>$<?php echo $record['salary'] ?></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="items-link f-right">
-                                            <a href="job_details.php?job_id=<?= $record['job_id'] ?>&company_id=<?= $company_id ?>"><?php echo $record['job_nature'] ?></a>
-                                            <span><?php echo $record['posted_date'] ?></span>
-                                        </div>
-                                    </div>
+                                if (mysqli_num_rows($result) > 0) {
 
-                                <?php
-                                }
-
-                                ?>
-
-                            <?php } else {
+                                    while ($record = mysqli_fetch_array($result)) {
                             ?>
-                                <div class="filter-warning">
-                                    <h1>Ooops... No Any Matches Found!</h1>
-                                </div>
-                        <?php
+
+                                        <div class="table-row">
+                                            <div class="table-cell first-cell">
+                                                <p><?php echo $record['application_id'] ?></p>
+                                            </div>
+                                            <div class="table-cell">
+                                                <p><?php echo $record['applicant_id'] ?></p>
+                                            </div>
+                                            <div class="table-cell last-cell">
+                                                <p><?php echo $record['applicant_full_name'] ?></p>
+                                            </div>
+                                            <div class="table-cell fourth-cell">
+                                                <p><?php echo $record['job_role'] ?></p>
+                                            </div>
+                                            <div class="table-cell fourth-cell">
+                                                <p><?php echo $record['applicant_contact_email'] ?></p>
+                                            </div>
+                                            <div class="table-cell fourth-cell">
+                                                <p><?php echo $record['applicant_mobile_number'] ?></p>
+                                            </div>
+                                            <div class="table-cell fourth-cell">
+                                                <p><?php echo $record['applicant_cv'] ?></p>
+                                            </div>
+                                            <div class="table-cell fourth-cell">
+                                                <p><?php echo $record['applicant_cover_letter'] ?></p>
+                                            </div>
+                                        </div>
+
+                                    <?php
+                                    }
+
+                                    ?>
+
+                                <?php } else {
+                                ?>
+                                    <div class="filter-warning">
+                                        <h1>There is no applicants here</h1>
+                                    </div>
+                            <?php
+                                }
+                            } else {
+                                echo "DB failed!";
                             }
-                        } else {
-                            echo "DB failed!";
-                        }
 
-                        ?>
-
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

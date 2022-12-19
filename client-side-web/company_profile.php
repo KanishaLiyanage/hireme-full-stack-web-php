@@ -121,9 +121,9 @@ if ($result) {
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-work">
-                                    <p>SEE APPLICANTS</p>
+                                    <p>SEE WHO ARE THE APPLICANTS</p>
                                     <a href="./company_applications.php">
-                                        <button class="profile-edit-btn">See our applicants</button>
+                                        <button class="profile-edit-btn">Go to my applicants</button>
                                     </a>
                                     <!-- <p>WORK LINK</p>
                                         <a href="">Website Link</a><br /> -->

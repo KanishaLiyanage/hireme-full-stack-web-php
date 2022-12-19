@@ -3,9 +3,8 @@
 
 <?php
 if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
-    // echo "Both IDs passed!";
-    $_GET['com_id'] = $_GET['company_id'];
-    $_GET['j_id'] = $_GET['job_id'];
+    $com_id = $_GET['company_id'];
+    $j_id = $_GET['job_id'];
 } else {
     echo "ID pass failed!";
 }
@@ -81,7 +80,7 @@ if (isset($_GET['job_id']) && isset($_GET['company_id'])) {
                     <div class="formbold-mb-5 formbold-pt-3">
                     </div>
 
-                    <form action="../client-side-web/components/application_successful.php?job_id=<?= $_GET['j_id'] ?>&company_id=<?= $_GET['com_id'] ?>" method="POST" enctype="multipart/form-data">
+                    <form action="../client-side-web/components/application_successful.php?job_id=<?= $j_id ?>&company_id=<?= $com_id ?>" method="POST" enctype="multipart/form-data">
 
                         <div class="formbold-mb-5">
                             <label for="name" class="formbold-form-label"> Full Name </label>
