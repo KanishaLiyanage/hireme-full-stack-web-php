@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HireME | Register</title>
+    <title>HireME | Login</title>
 </head>
 
 <body>
-    <h1>Register as a Company</h1>
-    <a href="company_register.php"><button>Company Register</button></a>
-    <h1>Register as an Applicant</h1>
-    <a href="applicant_register.php"><button>Applicant Register</button></a>
+    <h1>Login as a Company</h1>
+    <a href="company_login.php"><button>Company Login</button></a>
+    <h1>Login as an Applicant</h1>
+    <a href="applicant_login.php"><button>Company Login</button></a>
 </body>
 
 </html>

@@ -29,8 +29,8 @@
                             </div>
 
                             <div class="header-btn d-none f-right d-lg-block">
-                                <a href="#" class="btn head-btn1">Register</a>
-                                <a href="#" class="btn head-btn2">Login</a>
+                                <a href="./login and register/register.php" class="btn head-btn1">Register</a>
+                                <a href="./login and register/login.php" class="btn head-btn2">Login</a>
                             </div>
                         </div>
                     </div>
