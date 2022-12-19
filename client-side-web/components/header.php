@@ -21,10 +21,14 @@
                                         <li><a href="home.php">Home</a></li>
                                         <li><a href="find_jobs.php">Find Jobs</a></li>
                                         <li><a href="post_job.php">Post a Job</a></li>
-                                        <li><a href="applicant_profile.php">Applicant Profile</a></li>
-                                        <li><a href="company_profile.php">Company Profile</a></li>
-                                        <li><a href="contact.php">Contact</a></li>
-                                        <li><a href="./login and register/logout.php">Logout</a></li>
+                                        <!-- <li><a href="contact.php">Contact</a></li> -->
+                                        <li><a href="profile.php">Profile</a></li>
+                                        <?php
+                                        if (isset($_SESSION['applicant_id'])) { ?>
+                                            <li><a href="./login and register/logout.php">Logout</a></li>
+                                        <?php } else if (isset($_SESSION['company_id'])) { ?>
+                                            <li><a href="./login and register/logout.php">Logout</a></li>
+                                        <?php } ?>
                                     </ul>
                                 </nav>
                             </div>

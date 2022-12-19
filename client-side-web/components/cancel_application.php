@@ -3,6 +3,15 @@
 
 <?php
 
+if (!isset($_SESSION['applicant_id'])) {
+    header("Location: ../login and register/applicant_login.php");
+} else {
+    $applicant_id = $_SESSION['applicant_id'];
+}
+
+?>
+
+<?php
 
 if (isset($_GET['application_id'])) {
 
