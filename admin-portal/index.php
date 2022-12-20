@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['admin_username'] = $row['admin_username'];
             $_SESSION['admin_email'] = $row['admin_email'];
             $_SESSION['admin_id'] = $row['admin_id'];
-            header('location:dashboard.php');
+            header('location:applicants.php');
     } else {
         $error[] = 'Incorrect email or password!';
     }

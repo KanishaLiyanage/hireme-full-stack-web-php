@@ -9,7 +9,7 @@ $id = $_SESSION['admin_id'];
 // if (!isset($username)) {
 //     header('location:index.php');
 //   }
-$query = "SELECT * FROM `companies` ORDER BY `companies`.`company_id` ASC";
+$query = "SELECT * FROM `companies` WHERE `companies`.`company_recycle_bin` = 0 ORDER BY `companies`.`company_id` ASC";
 $result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $query);
     <meta name="author" content="">
     <!-- Favicon icon -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png"> -->
-    <title> Admin Panel</title>
+    <title>Hire-me Admin Panel</title>
     <!-- Bootstrap Core CSS -->
     <link href="./css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -55,19 +55,9 @@ $result = mysqli_query($conn, $query);
                 <!-- ============================================================== -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="./images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="./images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="./images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="./images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                    <img src="./images/logo.png" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo icon -->
+                    <img src="./images/logo.png" alt="homepage" class="light-logo" />
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -100,7 +90,7 @@ $result = mysqli_query($conn, $query);
                                                 <p class="text-muted"><?php echo $email; ?></p></div>
                                         </div>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -133,8 +123,6 @@ $result = mysqli_query($conn, $query);
                     <ul id="sidebarnav">
                          <li class="nav-devider"></li>
                         <li class="nav-small-cap">Admin Panel</li>
-                        <li> <a class="waves-dark" href="dashboard.php"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
-                        </li>
                         <li> <a class="waves-dark" href="applicants.php"><i class="fa fa-users"></i><span class="hide-menu">Applicants</span></a>
                         </li> 
                         <li class="active"> <a class="waves-dark" href="companies.php"><i class="mdi mdi-hotel"></i><span class="hide-menu">Companies</span></a>
@@ -159,12 +147,12 @@ $result = mysqli_query($conn, $query);
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Employee</h3>
+                    <h3 class="text-themecolor">Companies</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Employee Details</li>
+                        <li class="breadcrumb-item active">Companies Details</li>
                     </ol>
                 </div>
             </div>
@@ -182,7 +170,7 @@ $result = mysqli_query($conn, $query);
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Applicants Details</h4>
+                                <h4 class="card-title">Companies Details</h4>
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
 
                                 <div class="table-responsive m-t-40">
@@ -195,6 +183,7 @@ $result = mysqli_query($conn, $query);
                                                 <th>Company Website</th>
                                                 <th>Company Email</th>
                                                 <th>Company Description</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -205,6 +194,7 @@ $result = mysqli_query($conn, $query);
                                                 <th>Company Website</th>
                                                 <th>Company Email</th>
                                                 <th>Company Description</th>
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -226,6 +216,7 @@ $result = mysqli_query($conn, $query);
                                                             <td>' . $website . '</td>
                                                             <td>' . $email . '</td>
                                                             <td>' . $desc . '</td>
+                                                            <td><a href="deleteCompanies.php?id='.$no.'">Delete</a></td>
                                                         </tr>';
                                                 }
                                             }
