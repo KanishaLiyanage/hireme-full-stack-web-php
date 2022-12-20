@@ -47,8 +47,8 @@ if ($result) {
             $companies_list .= "<td class=\"text-left\"> {$record['job_role']} </td>";
             $companies_list .= "<td class=\"text-left\"> {$record['applicant_contact_email']} </td>";
             $companies_list .= "<td class=\"text-left\"> {$record['applicant_mobile_number']} </td>";
-            $companies_list .= "<td class=\"text-left\"> {$record['applicant_cv']} </td>";
-            $companies_list .= "<td class=\"text-left\"> {$record['applicant_cover_letter']} </td>";
+            $companies_list .= "<td class=\"text-left\"> <a href=\"./components/cv_downloads.php?cv_file={$record['applicant_cv']}\"><button class=\"downloadBtn\">Download CV</button></a></td>";
+            $companies_list .= "<td class=\"text-left\"> <a href=\"./components/cover_letter_downloads.php?cv_file={$record['applicant_cover_letter']}\"><button class=\"downloadBtn\">Download Cover Letter</button></a></td>";
             $companies_list .= "</tr>";
             $companies_list .= "</tbody>";
         }

@@ -28,7 +28,23 @@
 
 .cancelBtn{
     color: white;
-    background-color: #00B074;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+.downloadBtn{
+    color: white;
+    background-color: #1696e7;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+.downloadBtn:hover{
+    color: white;
+    background-color: rgb(44, 81, 117);
     cursor: pointer;
     border-radius: 5px;
     border-color: transparent;

@@ -337,7 +337,7 @@ $json = mysqli_fetch_all ($result3, MYSQLI_ASSOC);
         var xArray = '<?php echo $res; ?>';
         var yArray = [55, 49, 44, 24, 15, 13, 12];
 
-        var layout = {title:"World Wide Wine Production"};
+        var layout = {title:"Most Trending Companies"};
 
         var data = [{labels:xArray, values:yArray, type:"pie"}];
 
