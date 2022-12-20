@@ -19,8 +19,8 @@ body {
 }
 
 .loginBtn:hover{
-    background-color: #00B074;
-    border-color: #00B074;
+    background-color: #237A00;
+    border-color: #237A00;
 }
 
 .loginText{
@@ -28,7 +28,7 @@ body {
 }
 
 .loginText:hover{
-    color: #00B074;
+    color: #237A00;
 }
 
 .logoAlignment{
