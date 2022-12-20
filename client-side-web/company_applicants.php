@@ -52,6 +52,8 @@ if ($result) {
             $companies_list .= "</tr>";
             $companies_list .= "</tbody>";
         }
+    } else {
+        $companies_list .= "<tbody><tr><div class='filter-warning'><h1>Ooops... No Any Applications Found!</h1></div></tr></tbody>";
     }
 }
 

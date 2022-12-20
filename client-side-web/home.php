@@ -110,7 +110,7 @@ $accCount = mysqli_num_rows($accCountResult);
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-                <div class="single-slider slider-height d-flex align-items-center" data-background="../client-side-web/assets/images/hero/h1_hero.jpg">
+                <div class="single-slider slider-height d-flex align-items-center mb-200" data-background="../client-side-web/assets/images/hero/h1_hero.jpg">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-9 col-md-10">
@@ -129,9 +129,9 @@ $accCount = mysqli_num_rows($accCountResult);
                                     </div>
 
                                     <div class="select-form">
-                                        <div class="select-itms">
+                                        <div class="select-itms"  >
                                             <select name="job_location" id="select1">
-                                                <option value="Anywhere">Anywhere</option>
+                                                <option value="Anywhere" >Anywhere</option>
                                                 <option value="Western Province">Western Province</option>
                                                 <option value="Central Province">Central Province</option>
                                                 <option value="Southern Province">Southern Province</option>
@@ -151,8 +151,8 @@ $accCount = mysqli_num_rows($accCountResult);
         </div>
 
         <!-- Our Services Start -->
-        <div class="our-services section-pad-t30">
-            <div class="container">
+        <div class="our-services section-pad-t30 ">
+            <div class="container " style="margin-top: -300px;">
                 <!-- Section Tittle -->
                 <div class="row">
                     <div class="col-lg-12">

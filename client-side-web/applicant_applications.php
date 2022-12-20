@@ -53,8 +53,9 @@ if ($result) {
             $applications_list .= "<td class=\"text-left\"> <a href=\"../client-side-web/components/cancel_application.php?application_id={$record['application_id']}\" onclick = \"return confirm('Are you sure to want cancel the application?');\"> <button class=\"cancelBtn\">Cancel</button> </a> </td>";
             $applications_list .= "</tr>";
             $applications_list .= "</tbody>";
-
         }
+    } else {
+        $applications_list .= "<tbody><tr><div class='filter-warning'><h1>Ooops... No Any Applications Found!</h1></div></tr></tbody>";
     }
 }
 
