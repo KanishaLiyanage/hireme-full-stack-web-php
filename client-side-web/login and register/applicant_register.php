@@ -155,11 +155,11 @@
             </div>
             <label class="form-group">Password (Give a password more than 8 characters)</label>
             <div class="form-group">
-                <input type="applicant_password" class="form-control" name="applicant_password" placeholder="Enter Password">
+                <input type="password" class="form-control" name="applicant_password" placeholder="Enter Password">
             </div>
             <label class="form-group">Repeat your password</label>
             <div class="form-group">
-                <input type="applicant_password" class="form-control" name="repeat_applicant_password" placeholder="Re-enter your Password">
+                <input type="password" class="form-control" name="repeat_applicant_password" placeholder="Re-enter your Password">
             </div>
             <label class="form-group">Profile Picture (Accepts JPEG images only)</label>
             <div class="form-group">

@@ -106,7 +106,7 @@ if (isset($_SESSION['applicant_id'])) {
                                         <h6>
                                             <?php echo $record['applicant_email'] ?>
                                         </h6>
-                                        <p class="proile-rating">MEMBER SINCE : <span>8/10</span></p>
+                                        <p class="proile-rating"><span><?php echo $record['applicant_username'] ?></span></p>
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">User Info</a>
@@ -328,7 +328,7 @@ if (isset($_SESSION['applicant_id'])) {
                                         <h6>
                                             <?php echo $record['company_email'] ?>
                                         </h6>
-                                        <p class="proile-rating">MEMBER SINCE : <span>8/10</span></p>
+                                        <p class="proile-rating"><span><?php echo $record['company_username'] ?></span></p>
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">User Info</a>
@@ -348,6 +348,10 @@ if (isset($_SESSION['applicant_id'])) {
                                         <p>SEE WHO ARE THE APPLICANTS</p>
                                         <a href="./company_applicants.php">
                                             <button class="profile-edit-btn">Go to my applicants</button>
+                                        </a>
+                                        <p>SEE MY POSTS</p>
+                                        <a href="./company_job_posts.php">
+                                            <button class="profile-edit-btn">Go to my posts</button>
                                         </a>
                                         <!-- <p>WORK LINK</p>
                                         <a href="">Website Link</a><br /> -->

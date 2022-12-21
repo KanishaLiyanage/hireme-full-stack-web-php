@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
         $img_extension = pathinfo($image_name, PATHINFO_EXTENSION);
         $img_ex_lc = strtolower($img_extension);
 
-        $allowed_extensions = array("jpg", "jpeg", "png");
+        $allowed_extensions = array("PNG", "png");
 
         if (in_array($img_ex_lc, $allowed_extensions)) {
 
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
                 header("Location: ./profile.php");
             }
         } else {
-            echo "File extension can not be allowed! Please upload jpg files only.";
+            echo "File extension can not be allowed! Please upload png files only.";
         }
     } else {
         echo "Error in Image file!";
@@ -169,7 +169,7 @@ if ($result) {
                                         <h6>
                                             <?php echo $record['company_email'] ?>
                                         </h6>
-                                        <p class="proile-rating">MEMBER SINCE : <span>8/10</span></p>
+                                        <p class="proile-rating"><span><?php echo $record['company_username'] ?></span></p>
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Company Info</a>

@@ -85,7 +85,7 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
             }
         }
     } else {
-        echo "File extension can not be allowed! Please upload jpg and png files only.";
+        echo "File extension can not be allowed! Please upload png files only.";
     }
 }
 
